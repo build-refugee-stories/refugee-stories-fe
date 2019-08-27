@@ -1,12 +1,46 @@
-.topnav {
-  display: flex;
-  flex-direction: row;
-
-  text-decoration: none;
-  font-size: 3.6rem;
-  color: $color-white;
-}
-
 .nav-item {
   margin: 1rem;
+  font-size: 1.8rem;
+}
+
+.white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-gray-light;
+  color: white;
+}
+
+.dropdown-off {
+  display: none;
+}
+
+.topnav {
+  display: none;
+
+  @media only screen and (min-width: 600px) {
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+
+    text-decoration: none;
+
+    color: $color-white;
+  }
 }

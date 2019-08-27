@@ -1,18 +1,13 @@
 import React from 'react';
-import NavBar from './NavBar.js';
+
 import logo from '../assets/pink-logo.png';
-import whiteHamburger from '../assets/white-hamburger-menu.png';
+
+import NavBar from './NavBar.js';
 
 function Header() {
   return (
     <div className="header">
-      <img
-        className="white-hamburger"
-        alt="logo"
-        src={whiteHamburger}
-        width="50"
-        height="39"
-      />
+      <NavBar />
       <img
         className="pink-logo"
         alt="logo"

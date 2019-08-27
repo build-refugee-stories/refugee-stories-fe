@@ -21,7 +21,22 @@
 .blue-pink-logo {
   position: absolute;
   bottom: 0rem;
-  left: 10rem; }
+  left: 9rem; }
+  @media only screen and (min-width: 700px) {
+    .blue-pink-logo {
+      left: 28rem; } }
+  @media only screen and (min-width: 700px) {
+    .blue-pink-logo {
+      left: 53rem; } }
+
+.bottomnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #314455;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
 
 .signup-form {
   display: flex;
@@ -36,36 +51,68 @@
   width: 20rem;
   height: 3rem; }
 
-.form-text {
-  margin: 8rem auto 2rem auto;
-  padding: 0 1rem; }
-
 .form-container {
   padding: 0; }
+
+.story-form-field {
+  height: 50rem;
+  width: 30rem;
+  margin: 2rem;
+  border-radius: 1rem; }
+  @media only screen and (min-width: 700px) {
+    .story-form-field {
+      width: 50rem; } }
+  @media only screen and (min-width: 1000px) {
+    .story-form-field {
+      width: 80rem; } }
 
 .header {
   position: relative;
   height: 7rem; }
-
-.white-hamburger {
-  position: absolute;
-  left: 0;
-  top: 0; }
 
 .pink-logo {
   position: absolute;
   right: 0;
   top: 0; }
 
-.topnav {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  font-size: 3.6rem;
-  color: #fff; }
-
 .nav-item {
-  margin: 1rem; }
+  margin: 1rem;
+  font-size: 1.8rem; }
+
+.white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block; }
+  @media only screen and (min-width: 600px) {
+    .white-hamburger {
+      display: none; } }
+
+.dropdown-content {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #97aabd;
+  color: white; }
+
+.dropdown-off {
+  display: none; }
+
+.topnav {
+  display: none; }
+  @media only screen and (min-width: 600px) {
+    .topnav {
+      padding: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      color: #fff; } }
 
 *,
 *::after,
@@ -77,13 +124,18 @@
 html {
   font-size: 62.5%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100vh; }
 
 body {
   box-sizing: border-box;
   background-color: #314455;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100vh; }
+
+.App {
+  height: 100vh; }
 
 a:link {
   text-decoration: none;
@@ -112,3 +164,31 @@ body {
 
 label {
   font-size: 1.4rem; }
+
+.form-text {
+  margin: 8rem auto 2rem auto;
+  padding: 0 1rem; }
+
+.footer-text {
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 0 auto; }
+
+.story-text {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem; }
+
+.thankyou-wrapper {
+  background-color: #c96567;
+  height: 100%; }
+
+.thankyou-text-container {
+  margin: 15rem auto;
+  max-width: 40rem;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }

@@ -2,8 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
+import Header from './Header.js';
+import Footer from './Footer.js';
 
 const StoryForm = () => {
+<<<<<<< HEAD
     return (
       <div className="story-container">
         <div className="story-text">
@@ -81,18 +84,85 @@ const FormikStoryForm = withFormik({
         year: Yup.number(),
         imageUrl: Yup.string()
     }),
+=======
+  return (
+    <div className="form-container">
+      <Header />
+      <div className="form-text">
+        <h1 className="h1">Share Your Story</h1>
+        <p className="p story-text">
+          Please share your story with us. After our admins have reviewed it, we
+          will do our part to share it with the world.
+        </p>
+      </div>
 
-    handleSubmit(values, {setStatus, resetForm}) {
-        console.log(values)
-        axios
-        .post('https://refugee-stories-api-082019.herokuapp.com/api/public', values)
-        .then(res => {
-            console.log(res.data);
-            setStatus(res.data);
-            resetForm();
-        })
-        .catch(error => console.log(error.response));
-    }
+      <Form className="signup-form">
+        <label>Author</label>
+        <Field
+          className="field form-field"
+          name="author"
+          type="text"
+          placeholder="Author"
+        />
+        <label>Country of Origin</label>
+        <Field
+          className="field form-field"
+          name="country"
+          type="text"
+          placeholder="Country of Origin"
+        />
+        <label>Title</label>
+        <Field
+          className="field form-field"
+          name="title"
+          type="text"
+          placeholder="Title"
+        />
+        <label>Your Story</label>
+        <Field
+          className="field story-form-field"
+          component="textarea"
+          name="story"
+          type="text"
+        />
+        <button className="submit-button">Submit</button>
+      </Form>
+      <Footer />
+    </div>
+  );
+};
+
+const FormikStoryForm = withFormik({
+  mapPropsToValues({ author, country, title, story }) {
+    return {
+      author: author || '',
+      country: country || '',
+      title: title || '',
+      story: story || ''
+    };
+  },
+  validationSchema: Yup.object().shape({
+    author: Yup.string().required(),
+    country: Yup.string().required(),
+    title: Yup.string().required(),
+    story: Yup.string().required()
+  }),
+>>>>>>> 60138df32c9be328ce5bb5adcf865e548985bd85
+
+  handleSubmit(values, { setStatus, resetForm }) {
+    console.log(values);
+    axios
+      .post(
+        'https://refugee-stories-api-082019.herokuapp.com/api/public',
+        values
+      )
+      .then(res => {
+        console.log(res.data);
+        setStatus(res.data);
+        resetForm();
+      })
+      .catch(error => console.log(error.response));
+  }
 })(StoryForm);
 
 export default FormikStoryForm;
