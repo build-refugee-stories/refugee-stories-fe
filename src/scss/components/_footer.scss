@@ -8,5 +8,19 @@
 .blue-pink-logo {
   position: absolute;
   bottom: 0rem;
-  left: 10rem;
+  left: 8rem;
+}
+
+.footer-text {
+  padding: 1rem;
+}
+
+.bottomnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-gray-dark;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
