@@ -13,7 +13,7 @@ import Dashboard from './components/admin-components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <StoryForm />
+      <Login />
     </div>
   );
 }
