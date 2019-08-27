@@ -15,8 +15,8 @@ function App() {
     <div className="App">
       <AdminConfirmation />
 
-      {/*<LoginForm />
-      <PrivateRoute path="/dashboard" component={Dashboard} />*/}
+      <LoginForm />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
     </div>
   );
 }
