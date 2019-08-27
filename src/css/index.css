@@ -9,19 +9,53 @@
   background-color: #c96567;
   border-radius: 1rem;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  border: none; }
+
+.footer {
+  height: 35rem;
+  background-color: #97aabd;
+  position: relative;
+  padding-top: 5rem; }
+
+.blue-pink-logo {
+  position: absolute;
+  bottom: 0rem;
+  left: 10rem; }
 
 .signup-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 3rem; }
 
 .form-field {
   margin: 2rem;
   border-radius: 1rem;
   width: 20rem;
   height: 3rem; }
+
+.form-text {
+  margin: 8rem auto 2rem auto;
+  padding: 0 1rem; }
+
+.form-container {
+  padding: 0; }
+
+.header {
+  position: relative;
+  height: 7rem; }
+
+.white-hamburger {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.pink-logo {
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 .topnav {
   display: flex;
@@ -41,10 +75,15 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: #314455;
+  margin: 0;
+  padding: 0; }
 
 a:link {
   text-decoration: none;
@@ -59,3 +98,17 @@ body {
   font-size: 3.6rem;
   color: #fff;
   text-decoration: none; }
+
+.h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 3.6rem;
+  text-align: center;
+  margin-bottom: 3rem; }
+
+.p {
+  font-size: 1.8rem;
+  text-align: center; }
+
+label {
+  font-size: 1.4rem; }
