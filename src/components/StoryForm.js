@@ -6,85 +6,6 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 
 const StoryForm = () => {
-<<<<<<< HEAD
-    return (
-      <div className="story-container">
-        <div className="story-text">
-            <h1 className="h1">Share Your Story</h1>
-            <p className="p">Please share your story with us. After our admins have reviewed it, we do our part to share it with the world.
-            </p>
-        </div>
-      
-        <Form className="signup-form">
-         <label>Author</label>
-         <Field 
-            className="form-field"
-            name="author"
-            type="text"
-            placeholder="Author"         
-         />   
-        <label>Country of Origin</label>
-        <Field 
-            className="form-field"
-            name="country"
-            type="text"
-            placeholder="Country of Origin"
-        />        
-        <label>Title</label>
-        <Field 
-            className="form-field"
-            name="title"
-            type="text"
-            placeholder="Title"
-        />
-        <label>Your Story</label>
-        <Field 
-            className="form-field"
-            component="textarea"
-            name="story"
-            type="text"
-        />   
-        <label>Year</label>
-        <Field 
-            className="form-field"
-            name="year"
-            type="number"
-            placeholder="Year"
-        />  
-        <label>Image</label> 
-        <Field 
-            className="form-field"
-            name="imageUrl"
-            type="text"
-            placeholder="Iamge Url"
-        />
-        <button className="submit-button">Submit</button> 
-        </Form>   
-      </div>  
-    );
-};
-
-const FormikStoryForm = withFormik({
-    mapPropsToValues({ author, country, title, story, year, imageUrl }) {
-        return {
-            author: author || '',
-            country: country || '',
-            title: title || '',
-            story: story || '',
-            year: year || '',
-            imageUrl: imageUrl || '',
-
-        };
-    },
-    validationSchema: Yup.object().shape({
-        author: Yup.string().required(),
-        country: Yup.string().required(),
-        title: Yup.string().required(),
-        story: Yup.string().required(),
-        year: Yup.number(),
-        imageUrl: Yup.string()
-    }),
-=======
   return (
     <div className="form-container">
       <Header />
@@ -125,6 +46,20 @@ const FormikStoryForm = withFormik({
           name="story"
           type="text"
         />
+        <label>Year</label>
+        <Field 
+            className="form-field"
+            name="year"
+            type="number"
+            placeholder="Year"
+        />  
+        <label>Image</label> 
+        <Field 
+            className="form-field"
+            name="imageUrl"
+            type="text"
+            placeholder="Iamge Url"
+        />
         <button className="submit-button">Submit</button>
       </Form>
       <Footer />
@@ -133,21 +68,24 @@ const FormikStoryForm = withFormik({
 };
 
 const FormikStoryForm = withFormik({
-  mapPropsToValues({ author, country, title, story }) {
+  mapPropsToValues({ author, country, title, story, year, imageUrl }) {
     return {
       author: author || '',
       country: country || '',
       title: title || '',
-      story: story || ''
+      story: story || '',
+      year: year || '',
+      imageUrl: imageUrl || '',
     };
   },
   validationSchema: Yup.object().shape({
     author: Yup.string().required(),
     country: Yup.string().required(),
     title: Yup.string().required(),
-    story: Yup.string().required()
+    story: Yup.string().required(),
+    year: Yup.number(),
+    imageUrl: Yup.string(),
   }),
->>>>>>> 60138df32c9be328ce5bb5adcf865e548985bd85
 
   handleSubmit(values, { setStatus, resetForm }) {
     console.log(values);
