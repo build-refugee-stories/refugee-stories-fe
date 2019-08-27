@@ -6,7 +6,7 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import * as Yup from 'yup';
 
-const SignupForm = ({ errors, touched }) => {
+const SignupForm = () => {
   return (
     <div className="form-container">
       <Header />
@@ -38,6 +38,7 @@ const SignupForm = ({ errors, touched }) => {
     </div>
   );
 };
+
 
 const FormikSignupForm = withFormik({
   mapPropsToValues({ username, password }) {

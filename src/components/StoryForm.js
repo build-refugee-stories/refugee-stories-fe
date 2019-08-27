@@ -8,39 +8,53 @@ const StoryForm = () => {
       <div className="story-container">
         <div className="story-text">
             <h1 className="h1">Share Your Story</h1>
-            <p className="p-story">Please share your story with us. After our admins have reviewed it, we do our part to share it with the world.
+            <p className="p">Please share your story with us. After our admins have reviewed it, we do our part to share it with the world.
             </p>
         </div>
       
-        <Form className="story-form">
+        <Form className="signup-form">
          <label>Author</label>
          <Field 
-            className=""
+            className="form-field"
             name="author"
             type="text"
             placeholder="Author"         
          />   
         <label>Country of Origin</label>
         <Field 
-            className=""
+            className="form-field"
             name="country"
             type="text"
             placeholder="Country of Origin"
         />        
         <label>Title</label>
         <Field 
-            className=""
+            className="form-field"
             name="title"
             type="text"
             placeholder="Title"
         />
         <label>Your Story</label>
         <Field 
-            className=""
+            className="form-field"
             component="textarea"
             name="story"
             type="text"
         />   
+        <label>Year</label>
+        <Field 
+            className="form-field"
+            name="year"
+            type="number"
+            placeholder="Year"
+        />  
+        <label>Image</label> 
+        <Field 
+            className="form-field"
+            name="imageUrl"
+            type="text"
+            placeholder="Iamge Url"
+        />
         <button className="submit-button">Submit</button> 
         </Form>   
       </div>  
@@ -48,12 +62,15 @@ const StoryForm = () => {
 };
 
 const FormikStoryForm = withFormik({
-    mapPropsToValues({ author, country, title, story }) {
+    mapPropsToValues({ author, country, title, story, year, imageUrl }) {
         return {
             author: author || '',
             country: country || '',
             title: title || '',
             story: story || '',
+            year: year || '',
+            imageUrl: imageUrl || '',
+
         };
     },
     validationSchema: Yup.object().shape({
@@ -61,6 +78,8 @@ const FormikStoryForm = withFormik({
         country: Yup.string().required(),
         title: Yup.string().required(),
         story: Yup.string().required(),
+        year: Yup.number(),
+        imageUrl: Yup.string()
     }),
 
     handleSubmit(values, {setStatus, resetForm}) {
