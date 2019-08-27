@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 
@@ -28,15 +29,21 @@ const FormikSignupForm = withFormik ({
     // Validation
     validationSchema: Yup.object().shape({
         username: Yup.string()
-        .required("Username Required"),
-
+        .required(),
         password: Yup.string()
-        .min(6)
-        .required("Password Required")
+        .required()
     }),
 
-    handleSubmit(values) {
+    handleSubmit(values, {setStatus, resetForm}) {
         console.log(values)
+        axios
+        .post('https://refugee-stories-api-082019.herokuapp.com/api/register', values)
+        .then(res => {
+            console.log(res.data);
+            setStatus(res.data);
+            resetForm();
+        })
+        .catch(error => console.log(error.res));
     }
 })(SignupForm);
 
