@@ -13,11 +13,21 @@
   height: 3rem;
 }
 
-.form-text {
-  margin: 8rem auto 2rem auto;
-  padding: 0 1rem;
-}
-
 .form-container {
   padding: 0;
+}
+
+.story-form-field {
+  height: 50rem;
+  width: 30rem;
+  margin: 2rem;
+  border-radius: 1rem;
+
+  @media only screen and (min-width: 700px) {
+    width: 50rem;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    width: 80rem;
+  }
 }
