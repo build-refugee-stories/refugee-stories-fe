@@ -21,7 +21,25 @@
 .blue-pink-logo {
   position: absolute;
   bottom: 0rem;
-  left: 10rem; }
+  left: 9rem; }
+  @media only screen and (min-width: 700px) {
+    .blue-pink-logo {
+      left: 28rem; } }
+  @media only screen and (min-width: 700px) {
+    .blue-pink-logo {
+      left: 53rem; } }
+
+.footer-text {
+  padding: 1rem; }
+
+.bottomnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #314455;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
 
 .signup-form {
   display: flex;
@@ -47,25 +65,49 @@
   position: relative;
   height: 7rem; }
 
-.white-hamburger {
-  position: absolute;
-  left: 0;
-  top: 0; }
-
 .pink-logo {
   position: absolute;
   right: 0;
   top: 0; }
 
-.topnav {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  font-size: 3.6rem;
-  color: #fff; }
-
 .nav-item {
-  margin: 1rem; }
+  margin: 1rem;
+  font-size: 1.8rem; }
+
+.white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block; }
+  @media only screen and (min-width: 600px) {
+    .white-hamburger {
+      display: none; } }
+
+.dropdown-content {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #97aabd;
+  color: white; }
+
+.dropdown-off {
+  display: none; }
+
+.topnav {
+  display: none; }
+  @media only screen and (min-width: 600px) {
+    .topnav {
+      padding: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      color: #fff; } }
 
 *,
 *::after,
@@ -112,3 +154,6 @@ body {
 
 label {
   font-size: 1.4rem; }
+
+.thankyou-wrapper {
+  background-color: #c96567; }
