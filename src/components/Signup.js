@@ -43,7 +43,7 @@ const FormikSignupForm = withFormik ({
             setStatus(res.data);
             resetForm();
         })
-        .catch(error => console.log(error.res));
+        .catch(error => console.log(error.response));
     }
 })(SignupForm);
 
