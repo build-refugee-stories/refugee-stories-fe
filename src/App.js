@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SignupForm from './components/Signup';
+import Login from './components/Login';
 
 import { Route } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ import Dashboard from './components/admin-components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <SignupForm />
+      <Login />
 
       {/*<LoginForm />
       <PrivateRoute path="/dashboard" component={Dashboard} />*/}
