@@ -119,13 +119,18 @@
 html {
   font-size: 62.5%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100vh; }
 
 body {
   box-sizing: border-box;
   background-color: #314455;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100vh; }
+
+.App {
+  height: 100vh; }
 
 a:link {
   text-decoration: none;
@@ -156,4 +161,15 @@ label {
   font-size: 1.4rem; }
 
 .thankyou-wrapper {
-  background-color: #c96567; }
+  background-color: #c96567;
+  height: 100%; }
+
+.thankyou-text-container {
+  margin: 15rem auto;
+  max-width: 40rem;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../assets/pink-logo.png';
-import whiteHamburger from '../assets/white-hamburger-menu.png';
+
 import NavBar from './NavBar.js';
 
 function Header() {
