@@ -8,7 +8,15 @@
 .blue-pink-logo {
   position: absolute;
   bottom: 0rem;
-  left: 8rem;
+  left: 9rem;
+
+  @media only screen and (min-width: 700px) {
+    left: 28rem;
+  }
+
+  @media only screen and (min-width: 700px) {
+    left: 53rem;
+  }
 }
 
 .footer-text {
