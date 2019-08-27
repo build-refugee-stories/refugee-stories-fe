@@ -4,6 +4,7 @@ import Story from './StoryForReview';
 
 const StoriesForReview = ({stories}) => {
     console.log(stories);
+
     return (
        <div className='container'>
            <h2>Stories For Your Review:</h2>
