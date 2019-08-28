@@ -8,7 +8,7 @@ const StoriesForReview = ({stories}) => {
     return (
        <div className='container'>
            <h2>Stories For Your Review:</h2>
-           <div className='stories-display'>
+           <div className='pending-stories-display'>
             { (stories.length > 0) ? (stories.map(story => (
                 <StoryCard key={story.id} title={story.title} image={story.imageUrl} author={story.author} country={story.country} year={story.year} text={story.story}/>))) : (<p>There are no stories for review at this time.</p>)
             }

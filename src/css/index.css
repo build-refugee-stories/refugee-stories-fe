@@ -148,17 +148,21 @@ html {
   font-size: 62.5%;
   margin: 0;
   padding: 0;
-  height: 100vh; }
+  height: 100vh;
+  width: 100%; }
 
 body {
   box-sizing: border-box;
   background-color: #314455;
   margin: 0;
   padding: 0;
-  height: 100vh; }
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden; }
 
 .App {
-  height: 100vh; }
+  height: 100vh;
+  width: 100%; }
 
 a:link {
   text-decoration: none;
@@ -210,6 +214,61 @@ label {
   text-align: center; }
 
 .hero-image {
+  width: 100%; }
+
+.list-of-stories {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+
+.home-container {
+  width: 100%; }
+
+.story-card {
+  margin: 4rem auto;
+  line-height: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.story-image {
+  margin-top: 2rem; }
+
+.story-text {
+  margin: 5rem auto;
+  padding: 0 2rem;
+  text-align: left;
+  max-width: 100rem; }
+
+.story-title {
+  max-width: 35rem;
+  font-size: 1.4rem;
+  text-align: center; }
+
+.stories-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+  @media only screen and (min-width: 700px) {
+    .stories-display {
+      max-width: 100rem;
+      flex-direction: row;
+      flex-wrap: wrap; } }
+
+.list-of-stories-home {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem; }
+
+.stories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%; }
 
 .thankyou-wrapper {

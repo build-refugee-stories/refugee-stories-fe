@@ -1,6 +1,8 @@
+
 import React, {useState} from 'react';
 
 import { Route } from 'react-router-dom';
+
 
 //components
 import LoginForm from './components/Login';
@@ -13,26 +15,32 @@ import StoryForm from './components/StoryForm';
 import HomeView from './components/HomeView';
 import AdminConfirmation from './components/confirmations/AdminConfirmation.js';
 import StoryConfirmation from './components/confirmations/StoryConfirmation.js';
+import StoryView from './components/StoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
+import ApprovedStoryCard from './components/ApprovedStoryCard';
 
 
 function App() {
-  
   return (
     <div className="App">
+
       <SignupForm />
       <StoryForm />
-      {/*<LoginForm />
-      <PrivateRoute path="/dashboard" component={Dashboard} />*/}
-      <AdminConfirmation />
-      <LoginForm />
       <PrivateRoute path="/dashboard" component={Dashboard} />
-      <HomeView />
       <Route exact path="/" component={HomeView} />
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />
+
+      {/* 
+      <PrivateRoute
+        path="/dashboard/story/:id"
+        render={props => <StoryView {...props} isAdmin={true} />}
+      /> */}
+
+      <Route path="/story/:id" component={ApprovedStoryCard} />
+
     </div>
   );
 }
