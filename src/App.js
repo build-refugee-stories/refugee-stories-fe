@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 //components
 import LoginForm from './components/Login';
@@ -20,6 +20,10 @@ function App() {
       <Route exact path="/" component={HomeView} />
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />
+      {/* <Route
+        path="/stories/:id"
+        render={props => <StoryView {...props} />}
+      /> */}
     </div>
   );
 }
