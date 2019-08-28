@@ -3,20 +3,23 @@
   background-color: $color-gray-light;
   position: relative;
   padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blue-pink-logo {
-  position: absolute;
-  bottom: 0rem;
-  left: 9rem;
+  position: relative;
+  text-align: center;
 
-  @media only screen and (min-width: 700px) {
-    left: 28rem;
-  }
+  // @media only screen and (min-width: 700px) {
+  //   left: 28rem;
+  // }
 
-  @media only screen and (min-width: 700px) {
-    left: 53rem;
-  }
+  // @media only screen and (min-width: 700px) {
+  //   left: 53rem;
+  // }
 }
 
 .bottomnav {
