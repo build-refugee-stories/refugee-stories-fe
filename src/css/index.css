@@ -212,6 +212,34 @@ label {
 .hero-image {
   width: 100%; }
 
+.list-of-stories {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.story-card {
+  margin: 4rem auto;
+  line-height: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.story-image {
+  margin-top: 2rem; }
+
+.story-text {
+  margin: 5rem auto;
+  padding: 0 2rem;
+  text-align: left;
+  max-width: 100rem; }
+
+.stories-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
 .thankyou-wrapper {
   background-color: #c96567;
   height: 100%; }

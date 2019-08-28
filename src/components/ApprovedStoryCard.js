@@ -24,8 +24,13 @@ const ApprovedStoryCard = props => {
   return (
     <div className="story-card">
       <h4>{story.title}</h4>
-      <img width="300px" alt="author" src={story.imageUrl} />
-      <p className="p">{story.story}</p>
+      <img
+        className="story-image"
+        width="300px"
+        alt="author"
+        src={story.imageUrl}
+      />
+      <p className="p story-text">{story.story}</p>
     </div>
   );
 };

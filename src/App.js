@@ -21,10 +21,6 @@ function App() {
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />
       <Route path="/story/:id" component={ApprovedStoryCard} />
-      {/* <Route
-        path="/stories/:id"
-        render={props => <StoryView {...props} />}
-      /> */}
     </div>
   );
 }
