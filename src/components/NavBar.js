@@ -6,8 +6,12 @@ import whiteHamburger from '../assets/white-hamburger-menu.png';
 function NavBar() {
   const [isActive, setIsActive] = useState(false);
 
-  function handleClick() {
-    setIsActive(!isActive);
+  function handleMenuClick() {
+    setIsActive(true);
+  }
+
+  function handleCloseClick() {
+    setIsActive(false);
   }
   return (
     <div className="navbarcontainer">
@@ -21,12 +25,15 @@ function NavBar() {
       </div>
       <div className="dropdown">
         <img
-          onClick={handleClick}
+          onClick={handleMenuClick}
           className="white-hamburger"
           alt="hamburger menu"
           src={whiteHamburger}
         />
         <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
+          <div onClick={handleCloseClick} className="close-button">
+            x
+          </div>
           <NavLink className="dropdown-link" target="_blank">
             Home
           </NavLink>

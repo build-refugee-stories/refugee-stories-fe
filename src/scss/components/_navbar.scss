@@ -13,15 +13,36 @@
   }
 }
 
+.close-button {
+  text-align: right;
+  padding: 0 1rem 0 0;
+}
+
 .dropdown-content {
   position: absolute;
-  top: 8rem;
-  left: 0;
+  top: -2rem;
+  left: -1rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   background-color: $color-gray-light;
   color: white;
+  border-radius: 0 1rem 1rem 0;
+  font-size: 2.2rem;
+  padding: 1rem;
+}
+.dropdown-item {
+  padding: 0.5rem;
+}
+.header {
+  position: relative;
+  height: 7rem;
+}
+
+.pink-logo {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .dropdown-off {
