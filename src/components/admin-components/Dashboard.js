@@ -23,15 +23,29 @@ const Dashboard = () => {
       .catch(error => console.log(error.response));
   };
 
+  const getAdmins = () => {
+    axiosWithAuth()
+      .get('https://refugee-stories-api-082019.herokuapp.com/api/users/pending')
+      .then(res => {
+        console.log(res);
+        setAdminList(res.data);
+      })
+      .catch(error => console.log(error.response));
+  };
+
   useEffect(() => {
     getStories();
+  }, []);
+
+  useEffect(() => {
+    getAdmins();
   }, []);
 
   return (
     <div className="dashboard-container">
       <Header />
       <h2>DASHBOARD IN PROGRESS</h2>
-      <AdminsForReview />
+      <AdminsForReview admins={adminList}/>
       <StoriesForReview stories={storyList} />
       <Footer />
     </div>
