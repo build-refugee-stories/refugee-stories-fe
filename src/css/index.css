@@ -76,6 +76,16 @@
     .white-hamburger {
       display: none; } }
 
+.home-white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+  width: 5rem; }
+  @media only screen and (min-width: 600px) {
+    .home-white-hamburger {
+      display: none; } }
+
 .close-button {
   text-align: right;
   padding: 0 1rem 0 0; }
@@ -104,6 +114,12 @@
   position: absolute;
   right: 0;
   top: 0; }
+
+.white-logo {
+  position: absolute;
+  right: -5rem;
+  top: -5rem;
+  width: 19rem; }
 
 .dropdown-off {
   display: none; }
@@ -185,6 +201,16 @@ label {
   max-width: 50rem;
   margin: 0 auto;
   padding: 1rem; }
+
+.hero-text {
+  position: absolute;
+  top: 33rem;
+  left: 2rem;
+  max-width: 55rem;
+  text-align: center; }
+
+.hero-image {
+  width: 100%; }
 
 .thankyou-wrapper {
   background-color: #c96567;

@@ -13,6 +13,17 @@
   }
 }
 
+.home-white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+  width: 5rem;
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
 .close-button {
   text-align: right;
   padding: 0 1rem 0 0;
@@ -43,6 +54,13 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.white-logo {
+  position: absolute;
+  right: -5rem;
+  top: -5rem;
+  width: 19rem;
 }
 
 .dropdown-off {
