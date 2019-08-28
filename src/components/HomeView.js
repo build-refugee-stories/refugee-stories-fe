@@ -6,7 +6,8 @@ import Footer from './Footer';
 import heroImage from '../assets/story-2.jpg';
 import logo from '../assets/white-logo.png';
 import hamburger from '../assets/white-hamburger-menu.png';
-import { Route } from 'react-router-dom';
+import Carousel from './Carousel';
+
 
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
@@ -24,7 +25,9 @@ const Homeview = () => {
   useEffect(() => {
     getStories();
   }, []);
-
+if (storyList.length === 0 ) {
+  return <div>Loading... </div>
+}
   return (
     // <div className="home-container">
     //   <img src={heroImage} className="hero-image" />
@@ -38,9 +41,17 @@ const Homeview = () => {
     //   </p>
     // </div> */}
     <div className="home-container">
-      <Header />
+    <Header />
+      <Carousel key={storyList.id} stories={storyList} />
+    
+     
+      
+
+      
       <Stories stories={storyList} />
+
       <Footer />
+      
     </div>
   );
 };
