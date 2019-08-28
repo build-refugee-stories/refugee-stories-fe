@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from './Header.js';
+import Footer from './Footer.js';
 
 const ApprovedStoryCard = props => {
   const [story, setStory] = useState({});
@@ -22,15 +24,20 @@ const ApprovedStoryCard = props => {
   }, []);
 
   return (
-    <div className="story-card">
-      <h4>{story.title}</h4>
-      <img
-        className="story-image"
-        width="300px"
-        alt="author"
-        src={story.imageUrl}
-      />
-      <p className="p story-text">{story.story}</p>
+    <div>
+      <Header />
+      <div className="story-card">
+        <h4>{story.title}</h4>
+        <img
+          className="story-image"
+          width="300px"
+          alt="author"
+          src={story.imageUrl}
+        />
+        <p className="p">by {story.author}</p>
+        <p className="p story-text">{story.story}</p>
+      </div>
+      <Footer />
     </div>
   );
 };
