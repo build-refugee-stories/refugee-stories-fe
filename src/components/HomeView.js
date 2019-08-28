@@ -11,7 +11,6 @@ import { Route } from 'react-router-dom';
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
 
-
   const getStories = () => {
     axiosWithAuth()
       .get('https://refugee-stories-api-082019.herokuapp.com/api/public')
@@ -27,19 +26,20 @@ const Homeview = () => {
   }, []);
 
   return (
+    // <div className="home-container">
+    //   <img src={heroImage} className="hero-image" />
+    //   <img src={logo} className="white-logo" />
+    //   <img src={hamburger} className="home-white-hamburger" />
+    // {/* <div className="hero-text">
+    //   <h1 className="hero-title">Refugee Stories</h1>
+    //   <p className="hero-p">
+    //     “The world will not be destroyed by those who do evil, but by those
+    //     who watch them without doing anything.” — Albert Einstein
+    //   </p>
+    // </div> */}
     <div className="home-container">
-      <img src={heroImage} className="hero-image" />
-      <img src={logo} className="white-logo" />
-      <img src={hamburger} className="home-white-hamburger" />
-      {/* <div className="hero-text">
-        <h1 className="hero-title">Refugee Stories</h1>
-        <p className="hero-p">
-          “The world will not be destroyed by those who do evil, but by those
-          who watch them without doing anything.” — Albert Einstein
-        </p>
-      </div> */}
+      <Header />
       <Stories stories={storyList} />
-      
       <Footer />
     </div>
   );

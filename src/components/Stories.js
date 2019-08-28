@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
 import ApprovedStoryCard from './ApprovedStoryCard';
-// import {Route} from 'react-router-dom';
 
-const Stories = ({stories}) => {
-    console.log(stories);
-    
-    return (
-       <div className='container'>
-           <h2>All Refugee Stories</h2>
-           <div className='stories-display'>
-            {stories.map(story => (
-                <ApprovedStoryCard key={story.id} title={story.title} image={story.imageUrl}/>))
-            }
-           </div>
-       </div> 
-    )
-}
+import { Link } from 'react-router-dom';
+
+const Stories = ({ stories }) => {
+  console.log(stories);
+
+  return (
+    <div className="stories-container">
+      <h2>All Refugee Stories</h2>
+      <div className="stories-display">
+        {stories.map(story => (
+          <div className="list-of-stories-home" key={story.id}>
+            <Link to={`/story/${story.id}`} className="story-title">
+              {story.title}
+            </Link>
+            <Link to={`/story/${story.id}`} className="story-image">
+              <img src={story.imageUrl} width="350px" alt="author" />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Stories;
 
