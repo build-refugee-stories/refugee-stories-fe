@@ -6,37 +6,50 @@ import whiteHamburger from '../assets/white-hamburger-menu.png';
 function NavBar() {
   const [isActive, setIsActive] = useState(false);
 
-  function handleClick() {
-    setIsActive(!isActive);
+  function handleMenuClick() {
+    setIsActive(true);
+  }
+
+  function handleCloseClick() {
+    setIsActive(false);
   }
   return (
     <div className="navbarcontainer">
       <div className="topnav">
-        <NavLink className="nav-item">Home</NavLink>
-        <NavLink className="nav-item" href="#">
-          About
+        <NavLink to="/" className="nav-item">
+          Home
         </NavLink>
-        <NavLink className="nav-item">Contribute</NavLink>
-        <NavLink className="nav-item">Admin</NavLink>
+        <a className="nav-item" href="#">
+          About
+        </a>
+        <NavLink to="/contribute" className="nav-item">
+          Contribute
+        </NavLink>
+        <NavLink to="/login" className="nav-item">
+          Admin
+        </NavLink>
       </div>
       <div className="dropdown">
         <img
-          onClick={handleClick}
+          onClick={handleMenuClick}
           className="white-hamburger"
           alt="hamburger menu"
           src={whiteHamburger}
         />
         <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
-          <NavLink className="dropdown-link" target="_blank">
+          <div onClick={handleCloseClick} className="close-button">
+            x
+          </div>
+          <NavLink to="/" className="dropdown-link">
             Home
           </NavLink>
-          <NavLink className="dropdown-link" target="_blank">
+          <a className="dropdown-link" href="#">
             About
-          </NavLink>
-          <NavLink className="dropdown-link" target="_blank">
+          </a>
+          <NavLink to="/contribute" className="dropdown-link">
             Contribute
           </NavLink>
-          <NavLink className="dropdown-link" target="_blank">
+          <NavLink to="/login" className="dropdown-link">
             Admin
           </NavLink>
         </div>

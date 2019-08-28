@@ -17,12 +17,18 @@ function Footer() {
         height="281"
       />
       <div className="bottomnav">
-        <NavLink className="nav-item nav-bottom-item">Home</NavLink>
-        <NavLink className="nav-item nav-bottom-item" href="#">
-          About
+        <NavLink to="/" className="nav-item nav-bottom-item">
+          Home
         </NavLink>
-        <NavLink className="nav-item nav-bottom-item">Contribute</NavLink>
-        <NavLink className="nav-item nav-bottom-item">Admin</NavLink>
+        <a className="nav-item nav-bottom-item" href="#">
+          About
+        </a>
+        <NavLink to="/contribute" className="nav-item nav-bottom-item">
+          Contribute
+        </NavLink>
+        <NavLink to="/login" className="nav-item nav-bottom-item">
+          Admin
+        </NavLink>
       </div>
     </div>
   );

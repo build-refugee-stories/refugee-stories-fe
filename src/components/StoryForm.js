@@ -2,78 +2,87 @@ import React from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
+import Header from './Header.js';
+import Footer from './Footer.js';
 
 const StoryForm = () => {
-    return (
-      <div className="story-container">
-        <div className="story-text">
-            <h1 className="h1">Share Your Story</h1>
-            <p className="p-story">Please share your story with us. After our admins have reviewed it, we do our part to share it with the world.
-            </p>
-        </div>
-      
-        <Form className="story-form">
-         <label>Author</label>
-         <Field 
-            className=""
-            name="author"
-            type="text"
-            placeholder="Author"         
-         />   
+  return (
+    <div className="form-container">
+      <Header />
+      <div className="form-text">
+        <h1 className="h1">Share Your Story</h1>
+        <p className="p story-text">
+          Please share your story with us. After our admins have reviewed it, we
+          will do our part to share it with the world.
+        </p>
+      </div>
+
+      <Form className="signup-form">
+        <label>Author</label>
+        <Field
+          className="field form-field"
+          name="author"
+          type="text"
+          placeholder="Author"
+        />
         <label>Country of Origin</label>
-        <Field 
-            className=""
-            name="country"
-            type="text"
-            placeholder="Country of Origin"
-        />        
+        <Field
+          className="field form-field"
+          name="country"
+          type="text"
+          placeholder="Country of Origin"
+        />
         <label>Title</label>
-        <Field 
-            className=""
-            name="title"
-            type="text"
-            placeholder="Title"
+        <Field
+          className="field form-field"
+          name="title"
+          type="text"
+          placeholder="Title"
         />
         <label>Your Story</label>
-        <Field 
-            className=""
-            component="textarea"
-            name="story"
-            type="text"
-        />   
-        <button className="submit-button">Submit</button> 
-        </Form>   
-      </div>  
-    );
+        <Field
+          className="field story-form-field"
+          component="textarea"
+          name="story"
+          type="text"
+        />
+        <button className="submit-button">Submit</button>
+      </Form>
+      <Footer />
+    </div>
+  );
 };
 
 const FormikStoryForm = withFormik({
-    mapPropsToValues({ author, country, title, story }) {
-        return {
-            author: author || '',
-            country: country || '',
-            title: title || '',
-            story: story || '',
-        };
-    },
-    validationSchema: Yup.object().shape({
-        author: Yup.string().required(),
-        country: Yup.string().required(),
-        title: Yup.string().required(),
-        story: Yup.string().required(),
-    }),
+  mapPropsToValues({ author, country, title, story }) {
+    return {
+      author: author || '',
+      country: country || '',
+      title: title || '',
+      story: story || ''
+    };
+  },
+  validationSchema: Yup.object().shape({
+    author: Yup.string().required(),
+    country: Yup.string().required(),
+    title: Yup.string().required(),
+    story: Yup.string().required()
+  }),
 
-    handleSubmit(values, {setStatus, resetForm}) {
-        console.log(values)
-        axios
-        .post('https://refugee-stories-api-082019.herokuapp.com/api/public', values)
-        .then(res => {
-            console.log(res.data);
-            setStatus(res.data);
-            resetForm();
-        })
-        .catch(error => console.log(error.response));
-    }
+  handleSubmit(values, { setStatus, resetForm }) {
+    console.log(values);
+    axios
+      .post(
+        'https://refugee-stories-api-082019.herokuapp.com/api/public',
+        values
+      )
+      .then(res => {
+        console.log(res.data);
+        setStatus(res.data);
+        resetForm();
+      })
+      .catch(error => console.log(error.response));
+  }
 })(StoryForm);
 
 export default FormikStoryForm;
