@@ -26,12 +26,24 @@ function App() {
   return (
     <div className="App">
 
-      <SignupForm />
-      <StoryForm />
       <PrivateRoute path="/dashboard" component={Dashboard} />
       <Route exact path="/" component={HomeView} />
-      <Route path="/contribute" component={StoryForm} />
-      <Route path="/login" component={LoginForm} />
+
+      <Route
+        path="/contribute"
+        render={props => <StoryForm {...props} />}
+      />
+      <Route path="/story-confirmation" component={StoryConfirmation} />
+
+      <Route
+        path="/signup"
+        render={props => <SignupForm {...props} />}
+      />
+      <Route path="/signup-confirmation" component={AdminConfirmation} />
+      <Route
+        path="/login"
+        render={props => <LoginForm {...props} />}
+      />
 
       {/* 
       <PrivateRoute
