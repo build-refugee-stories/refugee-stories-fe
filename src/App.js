@@ -13,16 +13,13 @@ import StoryConfirmation from './components/confirmations/StoryConfirmation.js';
 //contexts
 import StoriesContext from './contexts/StoriesContext';
 
-
 function App() {
   
   return (
     <div className="App">
-      <AdminConfirmation />
-
-      <LoginForm />
-      <PrivateRoute path="/dashboard" component={Dashboard} />
-      <HomeView />
+      <Route exact path="/" component={HomeView} />
+      <Route path="/contribute" component={StoryForm} />
+      <Route path="/login" component={LoginForm} />
     </div>
   );
 }
