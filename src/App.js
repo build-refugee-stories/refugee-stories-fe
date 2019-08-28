@@ -1,5 +1,7 @@
+
 import React, {useState} from 'react';
 import { Route } from 'react-router-dom';
+
 
 //components
 import LoginForm from './components/Login';
@@ -13,23 +15,24 @@ import StoryView from './components/StoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
+import ApprovedStoryCard from './components/ApprovedStoryCard';
 
 function App() {
-  
   return (
     <div className="App">
       <PrivateRoute path="/dashboard" component={Dashboard} />
       <Route exact path="/" component={HomeView} />
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />
-      {/* <Route
-        path="/story/:id"
-        render={props => <StoryView {...props} />}
-      />
+
+      {/* 
       <PrivateRoute
         path="/dashboard/story/:id"
         render={props => <StoryView {...props} isAdmin={true} />}
       /> */}
+
+      <Route path="/story/:id" component={ApprovedStoryCard} />
+
     </div>
   );
 }
