@@ -1,11 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
 const StoryView = props => {
+
+  const isAdmin = props.match.url.indexOf('dashboard') > 0;
+  //the above is a hack to make this component render both approved stories for all viewers and stories pending approval for admins. Only authorized admins with tokens should be able to access /dashboard.
+  console.log(isAdmin);
+
   const [story, setStory] = useState({});
 
   const getStory = () => {

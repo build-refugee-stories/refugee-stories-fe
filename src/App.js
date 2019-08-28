@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
 
-      <PrivateRoute path="/dashboard" component={Dashboard} />
+      
       <Route exact path="/" component={HomeView} />
 
       <Route
@@ -44,12 +44,11 @@ function App() {
         render={props => <LoginForm {...props} />}
       />
 
-      {/* 
-      <PrivateRoute
-        path="/dashboard/story/:id"
-        render={props => <StoryView {...props} isAdmin={true} />}
-      /> */}
-
+      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <Route
+        exact path="/dashboard/story/:id"
+        component={StoryView}
+      />
       <Route path="/story/:id" component={StoryView} />
 
     </div>
