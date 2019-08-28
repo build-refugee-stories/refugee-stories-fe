@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import ApprovedStoryCard from './ApprovedStoryCard';
-
-
 import { Link } from 'react-router-dom';
 
 const Stories = ({ stories }) => {

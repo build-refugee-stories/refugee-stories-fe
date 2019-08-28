@@ -19,7 +19,6 @@ import StoryView from './components/StoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
-import ApprovedStoryCard from './components/ApprovedStoryCard';
 
 
 function App() {
@@ -51,7 +50,7 @@ function App() {
         render={props => <StoryView {...props} isAdmin={true} />}
       /> */}
 
-      <Route path="/story/:id" component={ApprovedStoryCard} />
+      <Route path="/story/:id" component={StoryView} />
 
     </div>
   );
