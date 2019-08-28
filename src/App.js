@@ -22,14 +22,10 @@ function App() {
   
   return (
     <div className="App">
-      <SignupForm />
-      <StoryForm />
-      {/*<LoginForm />
-      <PrivateRoute path="/dashboard" component={Dashboard} />*/}
-      <AdminConfirmation />
-      <LoginForm />
+
+
       <PrivateRoute path="/dashboard" component={Dashboard} />
-      <HomeView />
+
       <Route exact path="/" component={HomeView} />
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />

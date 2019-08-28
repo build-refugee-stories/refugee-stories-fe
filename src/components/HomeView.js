@@ -32,19 +32,19 @@ if (storyList.length === 0 ) {
       <img src={heroImage} className="hero-image" />
       <img src={logo} className="white-logo" />
       <img src={hamburger} className="home-white-hamburger" />
-      {/* <div className="hero-text">
+      <div className="hero-text">
         <h1 className="hero-title">Refugee Stories</h1>
         <p className="hero-p">
           “The world will not be destroyed by those who do evil, but by those
           who watch them without doing anything.” — Albert Einstein
         </p>
-      </div> */}
+      </div>
       {/* {storyList.map(storyList => 
       <Carousel key={storyList.id} stories={storyList} />
 
       )} */}
-      <Carousel key={storyList.id} stories={storyList} />
-      <StoryView stories={storyList} />
+      {/* <Carousel key={storyList.id} stories={storyList} /> */}
+      {/* <StoryView stories={storyList} /> */}
      
       
       <Footer />

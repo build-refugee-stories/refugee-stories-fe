@@ -28,14 +28,11 @@ const Carousel = ({stories}) => {
         <h2> Single Item</h2>
         <Slider {...settings}>
           <div>
-            {/* <h2>{(stories[0])} </h2> */}
-            {/* <h2>{stories[stories.length-1]} </h2> */}
             <h2>{stories[stories.length-1].title} </h2>
             <img src={stories[stories.length-1].imageUrl}/>
             <button> Read More </button>
           </div>
           <div>
-            {/* <h2>{stories[stories.length-2]}</h2> */}
             <h2>{stories[stories.length-2].title} </h2>
             <img src={stories[stories.length-2].imageUrl}/>
             <button> Read More </button>
