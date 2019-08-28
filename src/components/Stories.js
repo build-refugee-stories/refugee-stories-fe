@@ -10,7 +10,7 @@ const Stories = ({stories}) => {
            <h2>All Refugee Stories</h2>
            <div className='stories-display'>
             {stories.map(story => (
-                <ApprovedStoryCard key={story.id} title={story.title} image={story.imageUrl}/>))
+                <ApprovedStoryCard key={story.id} storyId={story.id} title={story.title} image={story.imageUrl}/>))
             }
            </div>
        </div> 
