@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 //components
@@ -12,14 +12,15 @@ import StoryConfirmation from './components/confirmations/StoryConfirmation.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
+import ApprovedStoryCard from './components/ApprovedStoryCard';
 
 function App() {
-  
   return (
     <div className="App">
       <Route exact path="/" component={HomeView} />
       <Route path="/contribute" component={StoryForm} />
       <Route path="/login" component={LoginForm} />
+      <Route path="/story/:id" component={ApprovedStoryCard} />
       {/* <Route
         path="/stories/:id"
         render={props => <StoryView {...props} />}
