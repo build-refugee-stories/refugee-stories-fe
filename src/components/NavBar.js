@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import whiteHamburger from '../assets/white-hamburger-menu.png';
+import { tsPropertySignature } from '@babel/types';
 
 function NavBar() {
+  
   const [isActive, setIsActive] = useState(false);
 
   function handleMenuClick() {
@@ -13,6 +15,8 @@ function NavBar() {
   function handleCloseClick() {
     setIsActive(false);
   }
+
+
   return (
     <div className="navbarcontainer">
       <div className="topnav">
