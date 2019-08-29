@@ -174,7 +174,7 @@
   position: absolute;
   top: -2rem;
   left: -1rem;
-  margin: 1rem;
+  margin: 3rem;
   display: flex;
   flex-direction: column;
   background-color: #97aabd;
@@ -412,6 +412,7 @@ label {
   color: #fff;
   text-align: center; }
 
+
 .hero-title {
   font-family: Montserrat;
   font-size: 2.2rem;
@@ -456,6 +457,35 @@ label {
       background: none;
       background: rgba(0, 0, 0, 0.5);
       padding: 2rem; } }
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #c96567;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 
 .story-card {
   margin: 4rem auto;
