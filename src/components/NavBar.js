@@ -21,6 +21,7 @@ function NavBar() {
   //   localStorage.removeItem("token");
   //   props.history.push("/");
   // }
+  
 
   return (
     <div className="navbarcontainer">
