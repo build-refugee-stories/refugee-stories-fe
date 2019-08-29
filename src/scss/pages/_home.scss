@@ -24,3 +24,69 @@
 
   text-align: center;
 }
+
+.hero-title {
+  font-family: Montserrat;
+
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  text-align: center;
+
+  @media only screen and (min-width: 730px) {
+    font-size: 5.2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0rem;
+  height: 2.4rem;
+  left: 7rem;
+  top: 22rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+
+  border-radius: 1rem;
+
+  @media only screen and (min-width: 730px) {
+    background: none;
+    width: 100%;
+    top: 33rem;
+    left: 0rem;
+    background: rgba(0, 0, 0, 0.5);
+    height: 16rem;
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 850px) {
+    background: none;
+
+    top: 36rem;
+
+    background: rgba(0, 0, 0, 0.5);
+    height: 20rem;
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 950px) {
+    background: none;
+
+    top: 43rem;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 1050px) {
+    background: none;
+
+    top: 64.5rem;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 2rem;
+  }
+}

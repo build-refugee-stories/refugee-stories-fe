@@ -196,6 +196,76 @@
       text-decoration: none;
       color: #fff; } }
 
+/*             */
+.home-nav-item {
+  margin: 1rem;
+  font-size: 1.8rem; }
+
+.home-white-hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+  width: 5rem; }
+  @media only screen and (min-width: 600px) {
+    .home-white-hamburger {
+      display: none; } }
+
+.home-close-button {
+  text-align: right;
+  padding: 0 1rem 0 0; }
+
+.home-dropdown-content {
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #97aabd;
+  color: white;
+  border-radius: 0 1rem 1rem 0;
+  font-size: 2.2rem;
+  padding: 1rem;
+  z-index: 3; }
+
+.home-dropdown-item {
+  padding: 0.5rem; }
+
+.home-header {
+  position: relative;
+  height: 7rem; }
+
+.pink-logo {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.white-logo {
+  position: absolute;
+  right: -5rem;
+  top: -5rem;
+  width: 19rem; }
+
+.home-dropdown-off {
+  display: none; }
+
+.home-topnav {
+  display: none; }
+  @media only screen and (min-width: 600px) {
+    .home-topnav {
+      padding: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      color: #fff; } }
+
 *,
 *::after,
 *::before {
@@ -265,12 +335,12 @@ label {
   margin: 0 auto;
   padding: 1rem; }
 
-.hero-text {
-  position: absolute;
-  top: 33rem;
-  left: 2rem;
-  max-width: 55rem;
-  text-align: center; }
+.hero-p {
+  display: none; }
+  @media only screen and (min-width: 730px) {
+    .hero-p {
+      display: block;
+      font-size: 2.2rem; } }
 
 .hero-image {
   width: 100%; }
@@ -293,6 +363,55 @@ label {
   line-height: 4.2rem;
   color: #fff;
   text-align: center; }
+
+.hero-title {
+  font-family: Montserrat;
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  text-align: center; }
+  @media only screen and (min-width: 730px) {
+    .hero-title {
+      font-size: 5.2rem;
+      margin-bottom: 5rem; } }
+
+.hero-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0rem;
+  height: 2.4rem;
+  left: 7rem;
+  top: 22rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem; }
+  @media only screen and (min-width: 730px) {
+    .hero-text {
+      background: none;
+      width: 100%;
+      top: 33rem;
+      left: 0rem;
+      background: rgba(0, 0, 0, 0.5);
+      height: 16rem;
+      padding: 2rem; } }
+  @media only screen and (min-width: 850px) {
+    .hero-text {
+      background: none;
+      top: 36rem;
+      background: rgba(0, 0, 0, 0.5);
+      height: 20rem;
+      padding: 2rem; } }
+  @media only screen and (min-width: 950px) {
+    .hero-text {
+      background: none;
+      top: 43rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem; } }
+  @media only screen and (min-width: 1050px) {
+    .hero-text {
+      background: none;
+      top: 64.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem; } }
 
 .story-card {
   margin: 4rem auto;

@@ -49,23 +49,10 @@ label {
   padding: 1rem;
 }
 
-.hero-text {
-  position: absolute;
-  top: 33rem;
-  left: 2rem;
-  max-width: 55rem;
-  text-align: center;
+.hero-p {
+  display: none;
+  @media only screen and (min-width: 730px) {
+    display: block;
+    font-size: 2.2rem;
+  }
 }
-
-// .hero-title {
-//   font-size: 7.2rem;
-//   font-weight: 600;
-//   font-family: 'Montserrat', sans-serif;
-// }
-
-// .hero-p {
-//   font-size: 3.6rem;
-//   font-weight: 500;
-//   line-height: 4.2rem;
-//   margin-top: 5rem;
-// }

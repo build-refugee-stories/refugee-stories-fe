@@ -7,6 +7,7 @@ import heroImage from '../assets/story-2.jpg';
 import logo from '../assets/white-logo.png';
 import hamburger from '../assets/white-hamburger-menu.png';
 import Carousel from './Carousel';
+import HomeNavBar from './HomeNavBar.js';
 
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
@@ -28,25 +29,26 @@ const Homeview = () => {
     return <div>Loading... </div>;
   }
   return (
-    // <div className="home-container">
-    //   <img src={heroImage} className="hero-image" />
-    //   <img src={logo} className="white-logo" />
-    //   <img src={hamburger} className="home-white-hamburger" />
-    // {/* <div className="hero-text">
-    //   <h1 className="hero-title">Refugee Stories</h1>
-    //   <p className="hero-p">
-    //     “The world will not be destroyed by those who do evil, but by those
-    //     who watch them without doing anything.” — Albert Einstein
-    //   </p>
-    // </div> */}
     <div className="home-container">
-      <Header />
-      <div className="main-home">
-        <Carousel key={storyList.id} stories={storyList} />
+      <HomeNavBar />
+      <img src={heroImage} className="hero-image" />
+      <img src={logo} className="white-logo" />
 
-        <Stories stories={storyList} />
+      <div className="hero-text">
+        <h1 className="hero-title car-headline">Refugee Stories</h1>
+        <p className="hero-p">
+          “The world will not be destroyed by those who do evil, but by those
+          who watch them without doing anything.” — Albert Einstein
+        </p>
       </div>
-      <Footer />
+      <div className="home-container">
+        <div className="main-home">
+          <Carousel key={storyList.id} stories={storyList} />
+
+          <Stories stories={storyList} />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 };
