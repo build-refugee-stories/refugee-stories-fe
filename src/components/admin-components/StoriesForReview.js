@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import StoryCard from './StoryForReview';
 
-const StoriesForReview = ({stories}) => {
-    console.log(stories);
+const StoriesForReview = () => {
+    const [stories, setStories] = useState([]);
+
+    const getStories = () => {
+        axiosWithAuth()
+        .get('https://refugee-stories-api-082019.herokuapp.com/api/stories')
+        .then(res => {
+            console.log(res.data);
+            const unapprovedStories = res.data.filter(story => {
+            if (story.approved === false) return story;
+            });
+            setStories(unapprovedStories);
+        })
+        .catch(error => console.log(error.response));
+    };
+
+    useEffect(() => {
+        getStories();
+      }, []);
     
     return (
        <div className='container'>

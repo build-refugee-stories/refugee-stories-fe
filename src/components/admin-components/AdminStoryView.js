@@ -4,7 +4,7 @@ import Header from '../Header.js';
 import Footer from '../Footer.js';
 
 const AdminStoryView = (props) => {
-    console.log(props);
+    //console.log(props);
 
     const [story, setStory] = useState({});
     const id = props.match.params.id;
@@ -13,7 +13,7 @@ const AdminStoryView = (props) => {
         axiosWithAuth()
           .delete(`https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`)
           .then(res => {
-            console.log('DELETE', res);
+            //console.log('DELETE', res);
             props.history.push("/dashboard")
           })
           .catch(error => console.log(error.response))
@@ -23,7 +23,7 @@ const AdminStoryView = (props) => {
         axiosWithAuth()
           .put(`https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`)
           .then(res => {
-            console.log('APPROVE', res);
+            //console.log('APPROVE', res);
             props.history.push("/dashboard")
           })
           .catch(error => console.log(error.response))
@@ -35,7 +35,7 @@ const AdminStoryView = (props) => {
             `https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`
           )
           .then(res => {
-            console.log('ADMIN REQUEST', res);
+            //console.log('ADMIN REQUEST', res);
             setStory(res.data);
           })
           .catch(error => console.log(error.response));
