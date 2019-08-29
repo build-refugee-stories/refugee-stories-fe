@@ -6,15 +6,15 @@ const Stories = ({ stories }) => {
 
   return (
     <div className="stories-container">
-      <h2>All Refugee Stories</h2>
+      <h1 className="h1">All Refugee Stories</h1>
       <div className="stories-display">
         {stories.map(story => (
           <div className="list-of-stories-home" key={story.id}>
-            <Link to={`/story/${story.id}`} className="story-title">
-              {story.title}
+            <Link to={`/story/${story.id}`}>
+              <h3 className="story-title">{story.title}</h3>
             </Link>
-            <Link to={`/story/${story.id}`} className="story-image">
-              <img src={story.imageUrl} width="350px" alt="author" />
+            <Link to={`/story/${story.id}`}>
+              <img src={story.imageUrl} className="story-image" alt="author" />
             </Link>
           </div>
         ))}

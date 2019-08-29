@@ -8,7 +8,6 @@ import logo from '../assets/white-logo.png';
 import hamburger from '../assets/white-hamburger-menu.png';
 import Carousel from './Carousel';
 
-
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
 
@@ -25,9 +24,9 @@ const Homeview = () => {
   useEffect(() => {
     getStories();
   }, []);
-if (storyList.length === 0 ) {
-  return <div>Loading... </div>
-}
+  if (storyList.length === 0) {
+    return <div>Loading... </div>;
+  }
   return (
     // <div className="home-container">
     //   <img src={heroImage} className="hero-image" />
@@ -41,13 +40,13 @@ if (storyList.length === 0 ) {
     //   </p>
     // </div> */}
     <div className="home-container">
-    <Header />
-      <Carousel key={storyList.id} stories={storyList} />
-      
-      <Stories stories={storyList} />
+      <Header />
+      <div className="main-home">
+        <Carousel key={storyList.id} stories={storyList} />
 
+        <Stories stories={storyList} />
+      </div>
       <Footer />
-      
     </div>
   );
 };

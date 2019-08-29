@@ -14,35 +14,62 @@
 
 .carousel-container {
   margin-top: 5rem;
-  margin-bottom: 7rem; }
+  margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem; }
 
 .car-card-container {
+  text-align: center;
+  margin: 0 auto;
+  position: relative; }
+
+.carousel-image {
+  width: 40rem; }
+
+.main-home {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  margin-left: 42rem; }
+  justify-content: center; }
+
+.slick-slider {
+  max-width: 100vw; }
 
 .car-headline {
   margin-bottom: 3rem;
-  text-align: center; }
+  text-align: center;
+  font-size: 3.6rem; }
 
-.story-title {
-  position: absolute;
-  background-color: black; }
-
-.readmore-button {
-  width: 16rem;
+.carousel-button {
+  width: 13rem;
   height: 3.5rem;
   color: #fff;
   font-weight: 500;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 4rem;
   text-align: center;
   background-color: #c96567;
   border-radius: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  border: none; }
+  bottom: 6rem;
+  margin-left: 3rem;
+  border: none;
+  position: absolute; }
+
+.carousel-button-first {
+  width: 13rem;
+  height: 3.5rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: #c96567;
+  border-radius: 1rem;
+  bottom: 4rem;
+  left: 3rem;
+  border: none;
+  position: absolute; }
 
 .footer {
   height: 35rem;
@@ -258,6 +285,15 @@ label {
 .home-container {
   width: 100%; }
 
+.story-title {
+  max-width: 40rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 4.2rem;
+  color: #fff;
+  text-align: center; }
+
 .story-card {
   margin: 4rem auto;
   line-height: 3rem;
@@ -267,7 +303,9 @@ label {
   align-items: center; }
 
 .story-image {
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  width: 35rem;
+  box-shadow: 10px 5px 5px #202020; }
 
 .story-text {
   margin: 5rem auto;
@@ -275,15 +313,11 @@ label {
   text-align: left;
   max-width: 100rem; }
 
-.story-title {
-  max-width: 35rem;
-  font-size: 1.4rem;
-  text-align: center; }
-
 .stories-display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%; }
   @media only screen and (min-width: 700px) {
     .stories-display {
@@ -294,7 +328,8 @@ label {
 .list-of-stories-home {
   display: flex;
   flex-direction: column;
-  margin: 3rem; }
+  margin: 3rem;
+  position: relative; }
 
 .stories-container {
   display: flex;
