@@ -51,7 +51,7 @@ const Homeview = () => {
         </div>
       </div>
       <div>
-        <div className="main-home">
+        <div className="main">
           <Carousel key={storyList.id} stories={storyList} />
 
           <Stories stories={storyList} />
