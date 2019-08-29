@@ -51,7 +51,7 @@ const Carousel = ({ stories }) => {
   };
   return (
     <div className="carousel-container">
-      <h2 className="car-headline"> Newest Refugee Stories</h2>
+      <h2 className="car-headline"> Most Recent </h2>
       <Slider {...settings}>
         <div className="car-card-container">
           <h2 className="story-title">{stories[stories.length - 1].title} </h2>
