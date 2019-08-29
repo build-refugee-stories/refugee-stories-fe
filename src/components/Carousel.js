@@ -63,7 +63,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 1].id}`}>
-            <button className="readmore-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -76,7 +76,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 2].id}`}>
-            <button className="readmore-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -89,7 +89,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 3].id}`}>
-            <button className="readmore-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -102,7 +102,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 4].id}`}>
-            <button className="readmore-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -115,7 +115,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 5].id}`}>
-            <button className="readmore-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
       </Slider>
