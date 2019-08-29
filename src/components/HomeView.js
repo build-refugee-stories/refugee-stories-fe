@@ -25,7 +25,7 @@ const Homeview = () => {
     getStories();
   }, []);
   if (storyList.length === 0) {
-    return <div>Loading... </div>;
+    return <div className="loader"></div>;
   }
   return (
     // <div className="home-container">
