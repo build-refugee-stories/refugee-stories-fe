@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 // export default class SimpleSlider extends Component {
 const Carousel = ({ stories }) => {
   console.log(stories);
-  console.log(stories[0]);
+  console.log(stories[stories.length - 1], 'last story');
   //   render() {
   const settings = {
     dots: true,
@@ -63,7 +63,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 1].id}`}>
-            <button className="carousel-button-first"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -76,7 +76,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 2].id}`}>
-            <button className="carousel-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -89,7 +89,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 3].id}`}>
-            <button className="carousel-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
@@ -102,7 +102,7 @@ const Carousel = ({ stories }) => {
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 4].id}`}>
-            <button className="carousel-button"> Read More </button>
+            <button className="submit-button"> Read More </button>
           </Link>
         </div>
         <div Classname="car-card-container">
