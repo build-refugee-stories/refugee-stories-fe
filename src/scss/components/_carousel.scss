@@ -13,6 +13,7 @@
   // margin: 1rem;
   text-align: center;
   margin: 0 auto;
+  position: relative;
 }
 
 .carousel-image {
@@ -48,23 +49,34 @@
   font-size: 3.6rem;
 }
 
-.story-title {
-  position: absolute;
-  // margin-left: 10rem;
-  background-color: black;
-}
-
-.readmore-button {
-  width: 16rem;
+.carousel-button {
+  width: 13rem;
   height: 3.5rem;
   color: $color-white;
   font-weight: 500;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 4rem;
   text-align: center;
   background-color: $color-primary;
   border-radius: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  bottom: 6rem;
+  margin-left: 3rem;
   border: none;
+  position: absolute;
+}
+
+.carousel-button-first {
+  width: 13rem;
+  height: 3.5rem;
+  color: $color-white;
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: $color-primary;
+  border-radius: 1rem;
+  bottom: 4rem;
+  left: 3rem;
+  border: none;
+  position: absolute;
 }
