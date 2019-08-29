@@ -9,7 +9,7 @@ import pinkLogo from '../assets/pink-blue-logo.png';
 import hamburger from '../assets/white-hamburger-menu.png';
 import Carousel from './Carousel';
 import HomeNavBar from './HomeNavBar.js';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
@@ -45,9 +45,11 @@ const Homeview = () => {
             </p>
           </div>
 
-          <button type="submit" className="home-submit-button">
-            Share Your Story
-          </button>
+          <Link to={`/contribute`}>
+            <button type="submit" className="home-submit-button">
+              Share Your Story
+            </button>
+          </Link>
         </div>
       </div>
       <div>
