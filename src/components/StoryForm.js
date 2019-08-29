@@ -39,13 +39,6 @@ const StoryForm = () => {
           type="text"
           placeholder="Title"
         />
-        <label>Your Story</label>
-        <Field
-          className="field story-form-field"
-          component="textarea"
-          name="story"
-          type="text"
-        />
         <label>Year</label>
         <Field 
             className="form-field"
@@ -59,6 +52,13 @@ const StoryForm = () => {
             name="imageUrl"
             type="text"
             placeholder="Image Url"
+        />
+        <label>Your Story</label>
+        <Field
+          className="field story-form-field"
+          component="textarea"
+          name="story"
+          type="text"
         />
         <button className="submit-button">Submit</button>
       </Form>

@@ -53,7 +53,7 @@ const AdminStoryView = (props) => {
             <img
               className="story-image"
               width="300px"
-              alt="author"
+              alt="Photo of author"
               src={story.imageUrl}
             />
             <p className="p">by {story.author}</p>
