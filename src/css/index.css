@@ -12,6 +12,38 @@
   margin-right: auto;
   border: none; }
 
+.carousel-container {
+  margin-top: 5rem;
+  margin-bottom: 7rem; }
+
+.car-card-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 42rem; }
+
+.car-headline {
+  margin-bottom: 3rem;
+  text-align: center; }
+
+.story-title {
+  position: absolute;
+  background-color: black; }
+
+.readmore-button {
+  width: 16rem;
+  height: 3.5rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: #c96567;
+  border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: none; }
+
 .footer {
   height: 35rem;
   background-color: #97aabd;
