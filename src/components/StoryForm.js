@@ -58,7 +58,7 @@ const StoryForm = () => {
             className="form-field"
             name="imageUrl"
             type="text"
-            placeholder="Iamge Url"
+            placeholder="Image Url"
         />
         <button className="submit-button">Submit</button>
       </Form>
@@ -87,7 +87,7 @@ const FormikStoryForm = withFormik({
     imageUrl: Yup.string(),
   }),
 
-  handleSubmit(values, { setStatus, resetForm }) {
+  handleSubmit(values, { props, setStatus, resetForm }) {
     console.log(values);
     axios
       .post(
@@ -97,6 +97,7 @@ const FormikStoryForm = withFormik({
       .then(res => {
         console.log(res.data);
         setStatus(res.data);
+        props.history.push("/story-confirmation")
         resetForm();
       })
       .catch(error => console.log(error.response));
