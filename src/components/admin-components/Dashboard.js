@@ -16,7 +16,7 @@ const Dashboard = () => {
       .then(res => {
         console.log(res.data);
         const unapprovedStories = res.data.filter(story => {
-          if (story.approved == false) return story;
+          if (story.approved === false) return story;
         });
         setStoryList(unapprovedStories);
       })

@@ -6,7 +6,7 @@ const StoryCard = (props) => {
         <div className='story-card'>
             <h3>{props.title}</h3>
             <img src={props.image}/>
-            <Link to={`/story/${props.id}`}>
+            <Link to={`dashboard/story/${props.id}`}>
                 <button>Review Story</button>
             </Link>
             

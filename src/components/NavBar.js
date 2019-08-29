@@ -17,6 +17,11 @@ function NavBar() {
   }
 
 
+  // function logout(event) {
+  //   localStorage.removeItem("token");
+  //   props.history.push("/");
+  // }
+
   return (
     <div className="navbarcontainer">
       <div className="topnav">
