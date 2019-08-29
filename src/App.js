@@ -16,6 +16,7 @@ import HomeView from './components/HomeView';
 import AdminConfirmation from './components/confirmations/AdminConfirmation.js';
 import StoryConfirmation from './components/confirmations/StoryConfirmation.js';
 import StoryView from './components/StoryView.js';
+import AdminStoryView from './components/admin-components/AdminStoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
@@ -47,7 +48,7 @@ function App() {
       <PrivateRoute exact path="/dashboard" component={Dashboard} />
       <Route
         exact path="/dashboard/story/:id"
-        component={StoryView}
+        component={AdminStoryView}
       />
       <Route path="/story/:id" component={StoryView} />
 

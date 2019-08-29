@@ -6,9 +6,10 @@ import Footer from './Footer.js';
 
 const StoryView = props => {
 
-  const isAdmin = props.match.url.indexOf('dashboard') > 0;
-  //the above is a hack to make this component render both approved stories for all viewers and stories pending approval for admins. Only authorized admins with tokens should be able to access /dashboard.
-  console.log(isAdmin);
+  
+  // const isAdmin = props.match.url.indexOf('dashboard') > 0;
+  // //the above is a hack to make this component render both approved stories for all viewers and stories pending approval for admins. Only authorized admins with tokens should be able to access /dashboard.
+  // console.log(isAdmin)
 
   const [story, setStory] = useState({});
 
@@ -41,6 +42,7 @@ const StoryView = props => {
         />
         <p className="p">by {story.author}</p>
         <p className="p story-text">{story.story}</p>
+
       </div>
       <Footer />
     </div>
