@@ -64,8 +64,8 @@ const FormikLoginForm = withFormik({
     password: Yup.string().required()
   }),
 
-  handleSubmit(values, { resetForm }) {
-    console.log(values);
+  handleSubmit(values, { props, resetForm }) {
+    //console.log(values);
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/login',
@@ -74,7 +74,7 @@ const FormikLoginForm = withFormik({
       .then(res => {
         console.log(res.data);
         localStorage.setItem('token', res.data.token);
-        // history.push("/dashboard");
+        props.history.push("/dashboard");
         resetForm();
       })
       .catch(err => console.log(err.response));

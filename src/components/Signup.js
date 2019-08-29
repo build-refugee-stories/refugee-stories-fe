@@ -76,13 +76,14 @@ const FormikSignupForm = withFormik({
         .required()
     }),
 
-    handleSubmit(values, {setStatus, resetForm}) {
-        console.log(values)
+    handleSubmit(values, {props, setStatus, resetForm}) {
+        //console.log(values)
         axios
         .post('https://refugee-stories-api-082019.herokuapp.com/api/register', values)
         .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             setStatus(res.data);
+            props.history.push("/signup-confirmation");
             resetForm();
         })
         .catch(error => console.log(error.response));

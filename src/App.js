@@ -19,7 +19,6 @@ import StoryView from './components/StoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
-import ApprovedStoryCard from './components/ApprovedStoryCard';
 
 
 function App() {
@@ -27,21 +26,30 @@ function App() {
     <div className="App">
 
 
-
-      <PrivateRoute path="/dashboard" component={Dashboard} />
-
-
       <Route exact path="/" component={HomeView} />
-      <Route path="/contribute" component={StoryForm} />
-      <Route path="/login" component={LoginForm} />
 
-      {/* 
-      <PrivateRoute
-        path="/dashboard/story/:id"
-        render={props => <StoryView {...props} isAdmin={true} />}
-      /> */}
+      <Route
+        path="/contribute"
+        render={props => <StoryForm {...props} />}
+      />
+      <Route path="/story-confirmation" component={StoryConfirmation} />
 
-      <Route path="/story/:id" component={ApprovedStoryCard} />
+      <Route
+        path="/signup"
+        render={props => <SignupForm {...props} />}
+      />
+      <Route path="/signup-confirmation" component={AdminConfirmation} />
+      <Route
+        path="/login"
+        render={props => <LoginForm {...props} />}
+      />
+
+      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <Route
+        exact path="/dashboard/story/:id"
+        component={StoryView}
+      />
+      <Route path="/story/:id" component={StoryView} />
 
     </div>
   );

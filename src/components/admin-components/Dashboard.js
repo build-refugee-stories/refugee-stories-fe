@@ -41,11 +41,30 @@ const Dashboard = () => {
     getAdmins();
   }, []);
 
+  const rejectAdmin = id => {
+    axiosWithAuth()
+      .delete(`https://refugee-stories-api-082019.herokuapp.com/api/users/${id}`)
+      .then(res => {
+        console.log('DELETE', res);
+        getAdmins();  // fetch admins to update list
+      })
+      .catch(error => console.log(error.response))
+  };
+
+  const approveAdmin = id => {
+    axiosWithAuth()
+      .put(`https://refugee-stories-api-082019.herokuapp.com/api/users/${id}`)
+      .then(res => {
+        console.log('APPROVE', res);
+        getAdmins(); // fetch admins to update list
+      })
+      .catch(error => console.log(error.response))
+  };
+
   return (
     <div className="dashboard-container">
       <Header />
-      <h2>DASHBOARD IN PROGRESS</h2>
-      <AdminsForReview admins={adminList}/>
+      <AdminsForReview admins={adminList} reject={rejectAdmin} approve={approveAdmin}/>
       <StoriesForReview stories={storyList} />
       <Footer />
     </div>
