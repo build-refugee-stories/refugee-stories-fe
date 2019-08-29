@@ -12,6 +12,27 @@
   margin-right: auto;
   border: none; }
 
+.home-submit-button {
+  display: none; }
+  @media only screen and (min-width: 700px) {
+    .home-submit-button {
+      display: block;
+      width: 16rem;
+      height: 3.5rem;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 4rem;
+      text-align: center;
+      background-color: #c96567;
+      border-radius: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+      position: absolute;
+      top: 30rem;
+      right: 5rem; } }
+
 .carousel-container {
   margin-top: 5rem;
   margin-bottom: 7rem;
@@ -330,6 +351,13 @@ label {
   max-width: 30rem;
   margin: 0 auto; }
 
+.home-footer-text {
+  padding: 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  font-family: Montserrat;
+  font-size: 2.6rem; }
+
 .story-text {
   max-width: 50rem;
   margin: 0 auto;
@@ -378,9 +406,11 @@ label {
   position: absolute;
   z-index: 1;
   bottom: 0rem;
-  height: 2.4rem;
+  height: 2.2rem;
   left: 7rem;
   top: 22rem;
+  width: 25rem;
+  margin: 1rem;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 1rem; }

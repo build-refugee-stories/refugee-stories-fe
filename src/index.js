@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <Router>
-    <title>Refugee Stories</title>
     <App />
   </Router>,
   document.getElementById('root')

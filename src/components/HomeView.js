@@ -5,9 +5,11 @@ import Header from './Header';
 import Footer from './Footer';
 import heroImage from '../assets/story-2.jpg';
 import logo from '../assets/white-logo.png';
+import pinkLogo from '../assets/pink-blue-logo.png';
 import hamburger from '../assets/white-hamburger-menu.png';
 import Carousel from './Carousel';
 import HomeNavBar from './HomeNavBar.js';
+import { NavLink } from 'react-router-dom';
 
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
@@ -41,13 +43,42 @@ const Homeview = () => {
           who watch them without doing anything.” — Albert Einstein
         </p>
       </div>
+      <button type="submit" className="home-submit-button">
+        Share Your Story
+      </button>
       <div className="home-container">
         <div className="main-home">
           <Carousel key={storyList.id} stories={storyList} />
 
           <Stories stories={storyList} />
         </div>
-        <Footer />
+        <div className="footer">
+          <p className="p home-footer-text">
+            “Storytelling is the most powerful way to put ideas into the world.”
+            - Robert McKee
+          </p>
+          <img
+            className="blue-pink-logo"
+            alt="logo"
+            src={pinkLogo}
+            width="210"
+            height="281"
+          />
+          <div className="bottomnav">
+            <NavLink to="/" className="nav-item nav-bottom-item">
+              Home
+            </NavLink>
+            <a className="nav-item nav-bottom-item" href="#">
+              About
+            </a>
+            <NavLink to="/contribute" className="nav-item nav-bottom-item">
+              Contribute
+            </NavLink>
+            <NavLink to="/login" className="nav-item nav-bottom-item">
+              Admin
+            </NavLink>
+          </div>
+        </div>
       </div>
     </div>
   );
