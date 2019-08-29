@@ -20,38 +20,37 @@ import AdminStoryView from './components/admin-components/AdminStoryView.js';
 
 //contexts
 import StoriesContext from './contexts/StoriesContext';
+import { gray } from 'ansi-colors';
 
 
 function App() {
   return (
     <div className="App">
 
+        <Route exact path="/" component={HomeView} />
 
-      <Route exact path="/" component={HomeView} />
+        <Route
+          path="/contribute"
+          render={props => <StoryForm {...props} />}
+        />
+        <Route path="/story-confirmation" component={StoryConfirmation} />
 
-      <Route
-        path="/contribute"
-        render={props => <StoryForm {...props} />}
-      />
-      <Route path="/story-confirmation" component={StoryConfirmation} />
+        <Route
+          path="/signup"
+          render={props => <SignupForm {...props} />}
+        />
+        <Route path="/signup-confirmation" component={AdminConfirmation} />
+        <Route
+          path="/login"
+          render={props => <LoginForm {...props} />}
+        />
 
-      <Route
-        path="/signup"
-        render={props => <SignupForm {...props} />}
-      />
-      <Route path="/signup-confirmation" component={AdminConfirmation} />
-      <Route
-        path="/login"
-        render={props => <LoginForm {...props} />}
-      />
-
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
-      <Route
-        exact path="/dashboard/story/:id"
-        component={AdminStoryView}
-      />
-      <Route path="/story/:id" component={StoryView} />
-
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <Route
+          exact path="/dashboard/story/:id"
+          component={AdminStoryView}
+        />
+        <Route path="/story/:id" component={StoryView} />
     </div>
   );
 }

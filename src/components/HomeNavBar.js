@@ -25,7 +25,7 @@ function HomeNavBar() {
         <NavLink to="/" className="home-nav-item">
           Home
         </NavLink>
-        <a className="home-nav-item" href="#">
+        <a className="home-nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
           About
         </a>
         <NavLink to="/contribute" className="home-nav-item">
