@@ -383,6 +383,19 @@ label {
       display: block;
       font-size: 2.2rem; } }
 
+.main-dashboard {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem; }
+
+.head {
+  height: 15rem; }
+
+.story-card-image {
+  width: 35rem; }
+
 .hero-container {
   position: relative;
   width: 100vw;
@@ -425,7 +438,6 @@ label {
   line-height: 4.2rem;
   color: #fff;
   text-align: center; }
-
 
 .hero-title {
   font-family: Montserrat;
@@ -474,7 +486,6 @@ label {
       background: rgba(0, 0, 0, 0.5);
       padding: 2rem; } }
 
-<<<<<<< HEAD
 .main {
   margin-top: -20rem;
   margin-left: auto;
@@ -500,8 +511,6 @@ label {
       margin-left: auto;
       margin-right: auto; } }
 
-||||||| merged common ancestors
-=======
 .loader {
   position: absolute;
   left: 50%;
@@ -530,8 +539,6 @@ label {
   100% {
     transform: rotate(360deg); } }
 
-
->>>>>>> 39820be441102a1b9f51b0117bcf8f7e56e1a939
 .story-card {
   margin: 4rem auto;
   line-height: 3rem;
