@@ -32,21 +32,25 @@ const Homeview = () => {
   }
   return (
     <div className="home-container">
-      <HomeNavBar />
-      <img src={heroImage} className="hero-image" />
-      <img src={logo} className="white-logo" />
+      <img src={logo} alt="logo" className="white-logo" />
+      <div className="hero-container">
+        <HomeNavBar />
+        <div className="hero-image-container">
+          <img src={heroImage} alt="girl" className="hero-image" />
+          <div className="hero-text">
+            <h1 className="hero-title car-headline">Refugee Stories</h1>
+            <p className="hero-p">
+              “The world will not be destroyed by those who do evil, but by
+              those who watch them without doing anything.” — Albert Einstein
+            </p>
+          </div>
 
-      <div className="hero-text">
-        <h1 className="hero-title car-headline">Refugee Stories</h1>
-        <p className="hero-p">
-          “The world will not be destroyed by those who do evil, but by those
-          who watch them without doing anything.” — Albert Einstein
-        </p>
+          <button type="submit" className="home-submit-button">
+            Share Your Story
+          </button>
+        </div>
       </div>
-      <button type="submit" className="home-submit-button">
-        Share Your Story
-      </button>
-      <div className="home-container">
+      <div>
         <div className="main-home">
           <Carousel key={storyList.id} stories={storyList} />
 

@@ -1,3 +1,26 @@
+.hero-container {
+  position: relative;
+  width: 100vw;
+
+  text-align: center;
+  color: white;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-container {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarcontainer {
+  position: absolute;
+  z-index: 1;
+}
 .hero-image {
   width: 100%;
 }
@@ -41,22 +64,19 @@
 .hero-text {
   position: absolute;
   z-index: 1;
-  bottom: 0rem;
   height: 2.2rem;
-  left: 7rem;
-  top: 22rem;
   width: 25rem;
   margin: 1rem;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-
+  bottom: 0;
+  left: 2rem;
   border-radius: 1rem;
 
   @media only screen and (min-width: 730px) {
     background: none;
     width: 100%;
-    top: 33rem;
-    left: 0rem;
+
     background: rgba(0, 0, 0, 0.5);
     height: 16rem;
     padding: 2rem;
@@ -64,8 +84,6 @@
 
   @media only screen and (min-width: 850px) {
     background: none;
-
-    top: 36rem;
 
     background: rgba(0, 0, 0, 0.5);
     height: 20rem;
@@ -75,8 +93,6 @@
   @media only screen and (min-width: 950px) {
     background: none;
 
-    top: 43rem;
-
     background: rgba(0, 0, 0, 0.5);
 
     padding: 2rem;
@@ -84,8 +100,6 @@
 
   @media only screen and (min-width: 1050px) {
     background: none;
-
-    top: 64.5rem;
 
     background: rgba(0, 0, 0, 0.5);
 
