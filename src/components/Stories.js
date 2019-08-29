@@ -6,7 +6,7 @@ const Stories = ({ stories }) => {
 
   return (
     <div className="stories-container">
-      <h1 className="h1">All Refugee Stories</h1>
+      <h1 className="car-headline">Story Library</h1>
       <div className="stories-display">
         {stories.map(story => (
           <div className="list-of-stories-home" key={story.id}>
