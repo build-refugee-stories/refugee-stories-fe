@@ -43,10 +43,6 @@ if (storyList.length === 0 ) {
     <div className="home-container">
     <Header />
       <Carousel key={storyList.id} stories={storyList} />
-    
-     
-      
-
       
       <Stories stories={storyList} />
 
