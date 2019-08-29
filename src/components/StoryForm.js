@@ -46,6 +46,20 @@ const StoryForm = () => {
           name="story"
           type="text"
         />
+        <label>Year</label>
+        <Field 
+            className="form-field"
+            name="year"
+            type="number"
+            placeholder="Year"
+        />  
+        <label>Image</label> 
+        <Field 
+            className="form-field"
+            name="imageUrl"
+            type="text"
+            placeholder="Image Url"
+        />
         <button className="submit-button">Submit</button>
       </Form>
       <Footer />
@@ -54,22 +68,26 @@ const StoryForm = () => {
 };
 
 const FormikStoryForm = withFormik({
-  mapPropsToValues({ author, country, title, story }) {
+  mapPropsToValues({ author, country, title, story, year, imageUrl }) {
     return {
       author: author || '',
       country: country || '',
       title: title || '',
-      story: story || ''
+      story: story || '',
+      year: year || '',
+      imageUrl: imageUrl || '',
     };
   },
   validationSchema: Yup.object().shape({
     author: Yup.string().required(),
     country: Yup.string().required(),
     title: Yup.string().required(),
-    story: Yup.string().required()
+    story: Yup.string().required(),
+    year: Yup.number(),
+    imageUrl: Yup.string(),
   }),
 
-  handleSubmit(values, { setStatus, resetForm }) {
+  handleSubmit(values, { props, setStatus, resetForm }) {
     console.log(values);
     axios
       .post(
@@ -79,6 +97,7 @@ const FormikStoryForm = withFormik({
       .then(res => {
         console.log(res.data);
         setStatus(res.data);
+        props.history.push("/story-confirmation")
         resetForm();
       })
       .catch(error => console.log(error.response));

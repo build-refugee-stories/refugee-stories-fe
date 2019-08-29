@@ -20,15 +20,15 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
           <p className="p">Not an admin? Apply to be an admin here.</p>
         </div>
         <Form className="signup-form main-form">
-          <label>Username</label>
+          <label>Email</label>
           <Field
             className="field form-field"
             type="text"
-            name="username"
-            placeholder="Username"
+            name="email"
+            placeholder="email address"
           />
-          {touched.username && errors.username && (
-            <p className="error">{errors.username}</p>
+          {touched.email && errors.email && (
+            <p className="error">{errors.email}</p>
           )}
           <label>Password</label>
           <Field
@@ -41,10 +41,6 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
             <p className="error">{errors.password}</p>
           )}
 
-          {/* <Field className='field' type="text" name="email" placeholder="email" />
-          {touched.email && errors.email && <p className="error">{errors.email}</p>
-          } */}
-
           <button className="btn submit-button" type="submit">
             Log me in!
           </button>
@@ -56,21 +52,20 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
 };
 
 const FormikLoginForm = withFormik({
-  mapPropsToValues({ username, password }) {
+  mapPropsToValues({ email, password }) {
     return {
-      username: username || '',
+      email: email || '',
       password: password || ''
     };
   },
 
   validationSchema: Yup.object().shape({
-    username: Yup.string().required(),
+    email: Yup.string().required(),
     password: Yup.string().required()
-    //   email: Yup.string().required(),
   }),
 
-  handleSubmit(values, { resetForm }) {
-    console.log(values);
+  handleSubmit(values, { props, resetForm }) {
+    //console.log(values);
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/login',
@@ -79,7 +74,7 @@ const FormikLoginForm = withFormik({
       .then(res => {
         console.log(res.data);
         localStorage.setItem('token', res.data.token);
-        // history.push("/StoryView");
+        props.history.push("/dashboard");
         resetForm();
       })
       .catch(err => console.log(err.response));
