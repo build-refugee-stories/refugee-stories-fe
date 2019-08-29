@@ -28,7 +28,7 @@ function NavBar() {
         <NavLink to="/" className="nav-item">
           Home
         </NavLink>
-        <a className="nav-item" href="#">
+        <a className="nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
           About
         </a>
         <NavLink to="/contribute" className="nav-item">

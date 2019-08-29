@@ -16,6 +16,8 @@ const Homeview = () => {
       .get('https://refugee-stories-api-082019.herokuapp.com/api/public')
       .then(res => {
         console.log(res.data);
+        // const approvedStories = res.data.filter(story => {
+        //     if (story.approved === true) return story;
         setStoryList(res.data);
       })
       .catch(error => console.log(error.response));
