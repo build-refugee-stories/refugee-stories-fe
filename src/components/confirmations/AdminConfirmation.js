@@ -20,7 +20,7 @@ function AdminConfirmation() {
         <h1 className="h1">Thank you!</h1>
         <p className="p">
           Our admins will review your application shortly. For any questions or
-          concerns, please contact us at example@email.com
+          concerns, please contact us at refugeestories@example.com
         </p>
       </div>
       <div>

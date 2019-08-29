@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { withFormik, Form, Field } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import Header from './Header.js';
 import Footer from './Footer.js';
@@ -17,7 +18,11 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
         <Header />
         <div className="form-text">
           <h1 className="h1">Admin Login</h1>
-          <p className="p">Not an admin? Apply to be an admin here.</p>
+          <p className="p">Not an admin? Apply to be an admin 
+          <Link to={"/signup"}>
+                <span> here.</span>
+            </Link>
+          </p>
         </div>
         <Form className="signup-form main-form">
           <label>Email</label>
