@@ -20,16 +20,13 @@
   max-width: 40rem; }
 
 .car-card-container {
-  display: flex;
-  align-items: center;
-  justify-items: center;
   text-align: center;
-  justify-content: center; }
+  margin: 0 auto; }
 
 .carousel-image {
   width: 40rem; }
 
-.home-container {
+.main-home {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -300,6 +297,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%; }
   @media only screen and (min-width: 700px) {
     .stories-display {
