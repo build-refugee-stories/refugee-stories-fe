@@ -1,8 +1,6 @@
 
-import React, {useState} from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
-
 
 //components
 import LoginForm from './components/Login';
@@ -19,22 +17,30 @@ import StoryView from './components/StoryView.js';
 import AdminStoryView from './components/admin-components/AdminStoryView.js';
 
 //contexts
-import StoriesContext from './contexts/StoriesContext';
+import AdminContext from './contexts/AdminContext';
+
 import { gray } from 'ansi-colors';
 
 
 function App() {
+
+  const [isAdmin, updateIsAdmin] = useState(false);
+  console.log(isAdmin);
+  
+  // useEffect(() => {
+  //   updateIsAdmin()
+  // })
+
+
   return (
-    <div className="App">
-
+    <AdminContext.Provider value={{ isAdmin, updateIsAdmin }}>
+      <div className="App">
         <Route exact path="/" component={HomeView} />
-
         <Route
           path="/contribute"
           render={props => <StoryForm {...props} />}
         />
         <Route path="/story-confirmation" component={StoryConfirmation} />
-
         <Route
           path="/signup"
           render={props => <SignupForm {...props} />}
@@ -42,7 +48,7 @@ function App() {
         <Route path="/signup-confirmation" component={AdminConfirmation} />
         <Route
           path="/login"
-          render={props => <LoginForm {...props} />}
+          render={props => <LoginForm {...props} updateAdmin={updateIsAdmin} />}
         />
 
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -51,7 +57,10 @@ function App() {
           component={AdminStoryView}
         />
         <Route path="/story/:id" component={StoryView} />
-    </div>
+
+      </div>
+    </AdminContext.Provider>
+
   );
 }
 

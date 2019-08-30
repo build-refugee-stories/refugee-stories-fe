@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import whiteHamburger from '../assets/white-hamburger-menu.png';
 
 function HomeNavBar() {
@@ -14,10 +14,20 @@ function HomeNavBar() {
     setIsActive(false);
   }
 
-  // function logout(event) {
-  //   localStorage.removeItem("token");
-  //   props.history.push("/");
-  // }
+  function logout(event) {
+    localStorage.removeItem("token");
+  }
+
+  //Placeholder admin check
+  let isAdmin = false;
+  const adminCheck = () => {
+    if (localStorage.getItem("token") !== null) {
+      isAdmin = true;
+    } 
+    return isAdmin;
+  }
+  adminCheck();
+  console.log(isAdmin);
 
   return (
     <div className="navbarcontainer">
@@ -31,9 +41,19 @@ function HomeNavBar() {
         <NavLink to="/contribute" className="home-nav-item">
           Contribute
         </NavLink>
-        <NavLink to="/login" className="home-nav-item">
-          Admin
-        </NavLink>
+        {(isAdmin) ? (
+        <NavLink to="/dashboard" className="home-nav-item">
+          Dashboard
+        </NavLink> ) : (<NavLink to="/login" className="home-nav-item">
+          Admin Login
+        </NavLink>)}
+        {(isAdmin) ? (
+          <Link to="/" onClick={event => logout(event)} className="home-nav-item">
+          Logout
+          </Link>
+        ) : (<NavLink to="/sign" className="home-nav-item">
+        Admin Signup
+      </NavLink> )}
       </div>
       <div className="dropdown">
         <img

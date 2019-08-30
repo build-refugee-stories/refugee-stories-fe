@@ -8,8 +8,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 // export default class SimpleSlider extends Component {
 const Carousel = ({ stories }) => {
-  console.log(stories);
-  console.log(stories[stories.length - 1], 'last story');
+  //console.log(stories);
+  //console.log(stories[stories.length - 1], 'last story');
   //   render() {
   const settings = {
     dots: true,
@@ -70,7 +70,7 @@ const Carousel = ({ stories }) => {
             <button className="submit-button"> Read More </button>
           </Link>
         </div>
-        <div Classname="car-card-container">
+        <div className="car-card-container">
           <h2 className="story-title">{stories[stories.length - 2].title} </h2>
           <Link to={`/story/${stories[stories.length - 2].id}`}>
             <img
@@ -87,7 +87,7 @@ const Carousel = ({ stories }) => {
             <button className="submit-button"> Read More </button>
           </Link>
         </div>
-        <div Classname="car-card-container">
+        <div className="car-card-container">
           <h2 className="story-title">{stories[stories.length - 3].title} </h2>
           <Link to={`/story/${stories[stories.length - 3].id}`}>
             <img
@@ -104,7 +104,7 @@ const Carousel = ({ stories }) => {
             <button className="submit-button"> Read More </button>
           </Link>
         </div>
-        <div Classname="car-card-container">
+        <div className="car-card-container">
           <h2 className="story-title">{stories[stories.length - 4].title} </h2>
           <Link to={`/story/${stories[stories.length - 4].id}`}>
             <img
@@ -121,7 +121,7 @@ const Carousel = ({ stories }) => {
             <button className="submit-button"> Read More </button>
           </Link>
         </div>
-        <div Classname="car-card-container">
+        <div className="car-card-container">
           <h2 className="story-title">{stories[stories.length - 5].title} </h2>
           <Link to={`/story/${stories[stories.length - 5].id}`}>
             <img
