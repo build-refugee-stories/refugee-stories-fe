@@ -8,6 +8,7 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+
   reject: {
     backgroundColor: '#c96567',
     border: 0,
@@ -33,9 +34,12 @@ const useStyles = makeStyles(theme => ({
 }}));
   
     
-const AdminCard = (props) => {
 
-    const classes = useStyles();
+
+
+const AdminCard = props => {
+  const classes = useStyles();
+
 
     return (
         <div className='admin-card'>
@@ -54,7 +58,5 @@ const AdminCard = (props) => {
 }
 
 export default AdminCard;
-
-
 
 
