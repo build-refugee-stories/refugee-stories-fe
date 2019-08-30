@@ -10,19 +10,31 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  button: {
-    margin: theme.spacing(1),
+  reject: {
+    backgroundColor: '#c96567',
+    border: 0,
+    borderRadius: 5,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 50px',
+    marginTop: '2rem',
+    fontSize: 17,
+    // padding: theme.spacing(3),
   },
-  leftIcon: {
-    marginRight: theme.spacing(1),
-  },
-  rightIcon: {
-    marginLeft: theme.spacing(1),
-  },
-  iconSmall: {
-    fontSize: 30,
-  },
-}));
+  approve: {
+    backgroundColor: 'seagreen',
+    border: 0,
+    borderRadius: 5,
+    boxShadow: '0 3px 5px 2px rgba(136, 223, 145, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 50px',
+    marginRight: '2rem',
+    marginTop: '2rem',
+    fontSize: 17,
+    // padding: theme.spacing(3),
+}}));
 
 
 const AdminStoryView = (props) => {
@@ -82,11 +94,11 @@ const AdminStoryView = (props) => {
             />
             <p className="p">by {story.author}</p>
             <p className="p story-text">{story.story}</p>
-            <Button onClick={() => approveStory(id)} variant="contained" color="primary" className={classes.button}>
+            <Button onClick={() => approveStory(id)} variant="contained" color="primary" className={classes.approve}>
                     Approve
                     <CheckBoxIcon className={classes.rightIcon} />
             </Button>
-            <Button onClick={() => rejectStory(id)} variant="contained" color="primary" className={classes.button}>
+            <Button onClick={() => rejectStory(id)} variant="contained" color="primary" className={classes.reject}>
                     Reject
                     <BlockIcon className={classes.rightIcon} />
             </Button>

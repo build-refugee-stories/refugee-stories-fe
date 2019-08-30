@@ -58,13 +58,10 @@ const StoryView = props => {
         />
         <p className="p">by {story.author}</p>
         <p className="p story-text">{story.story}</p>
-        {isAdmin ? (
-          <button onClick={() => deleteStory(id)}>Remove Story</button>
-        ) : (
-          <button onClick={() => props.history.push('/')}>
-            Back To All Stories
-          </button>
-        )}
+
+        {(isAdmin) ? (<button className="submit-button" onClick={() => deleteStory(id)}>Remove Story</button>) : (<button onClick={() => props.history.push("/")}>Back To All Stories</button>)}
+
+
       </div>
       <Footer />
     </div>
