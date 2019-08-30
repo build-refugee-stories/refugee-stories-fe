@@ -8,37 +8,32 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-    leftIcon: {
-      marginRight: theme.spacing(1),
-    },
-    rightIcon: {
-      marginLeft: theme.spacing(1),
-    },
-    iconSmall: {
-      fontSize: 20,
-    },
-  }));
+  button: {
+    margin: theme.spacing(1)
+  },
+  leftIcon: {
+    marginRight: theme.spacing(1)
+  },
+  rightIcon: {
+    marginLeft: theme.spacing(1)
+  },
+  iconSmall: {
+    fontSize: 20
+  }
+}));
 
-const StoryCard = (props) => {
+const StoryCard = props => {
+  const classes = useStyles();
 
-    const classes = useStyles();
-
-    return (
-        <div className='story-card'>
-            <h3>{props.title}</h3>
-            <img src={props.image}/>
-            <Link to={`dashboard/story/${props.id}`}>
-                <button>Review Story</button>
-            </Link>
-        </div>
-    )
-}
+  return (
+    <div className="story-card">
+      <h3>{props.title}</h3>
+      <img alt="author" className="story-card-image" src={props.image} />
+      <Link to={`dashboard/story/${props.id}`}>
+        <button>Review Story</button>
+      </Link>
+    </div>
+  );
+};
 
 export default StoryCard;
-
-
-
-

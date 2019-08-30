@@ -59,7 +59,11 @@ const Carousel = ({ stories }) => {
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 1].imageUrl}
+              src={
+                stories[stories.length - 1].imageUrl === ''
+                  ? 'http://via.placeholder.com/350x233'
+                  : stories[stories.length - 1].imageUrl
+              }
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 1].id}`}>
@@ -72,7 +76,11 @@ const Carousel = ({ stories }) => {
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 2].imageUrl}
+              src={
+                stories[stories.length - 2].imageUrl === ''
+                  ? 'http://via.placeholder.com/350x233'
+                  : stories[stories.length - 2].imageUrl
+              }
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 2].id}`}>
@@ -85,7 +93,11 @@ const Carousel = ({ stories }) => {
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 3].imageUrl}
+              src={
+                stories[stories.length - 3].imageUrl === ''
+                  ? 'http://via.placeholder.com/350x233'
+                  : stories[stories.length - 3].imageUrl
+              }
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 3].id}`}>
@@ -98,7 +110,11 @@ const Carousel = ({ stories }) => {
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 4].imageUrl}
+              src={
+                stories[stories.length - 4].imageUrl === ''
+                  ? 'http://via.placeholder.com/350x233'
+                  : stories[stories.length - 4].imageUrl
+              }
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 4].id}`}>
@@ -111,7 +127,11 @@ const Carousel = ({ stories }) => {
             <img
               className="carousel-image"
               alt="author"
-              src={stories[stories.length - 5].imageUrl}
+              src={
+                stories[stories.length - 5].imageUrl === ''
+                  ? 'http://via.placeholder.com/350x233'
+                  : stories[stories.length - 5].imageUrl
+              }
             />
           </Link>
           <Link to={`/story/${stories[stories.length - 5].id}`}>
