@@ -54,7 +54,7 @@ function NavBar() {
           <Link to="/" onClick={event => logout(event)} className="home-nav-item">
           Logout
           </Link>
-        ) : (<NavLink to="/sign" className="home-nav-item">
+        ) : (<NavLink to="/signup" className="home-nav-item">
         Admin Signup
       </NavLink> )}
       </div>
