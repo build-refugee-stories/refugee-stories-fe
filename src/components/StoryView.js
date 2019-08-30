@@ -1,11 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import axios from 'axios';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
+//contexts
+import AdminContext from '../contexts/AdminContext';
+
 const StoryView = props => {  
+
+  //const { isAdmin } = useContext(AdminContext);
 
   const [story, setStory] = useState({});
   const id = props.match.params.id;
@@ -34,6 +39,7 @@ const StoryView = props => {
       .catch(error => console.log(error.response))
   };
 
+  //Placeholder admin check
   let isAdmin = false;
   const adminCheck = () => {
     if (localStorage.getItem("token") !== null) {
@@ -42,7 +48,7 @@ const StoryView = props => {
     return isAdmin;
   }
   adminCheck();
-  //console.log(isAdmin);
+  console.log(isAdmin);
   //Note: the above solution is not secure because a spoof token could be provided. This is a short-term hack to make this feature functional.
 
   return (
