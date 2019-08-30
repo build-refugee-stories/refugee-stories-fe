@@ -14,7 +14,15 @@ const Stories = ({ stories }) => {
               <h3 className="story-title">{story.title}</h3>
             </Link>
             <Link to={`/story/${story.id}`}>
-              <img src={story.imageUrl} className="story-image" alt="author" />
+              <img
+                src={
+                  story.imageUrl.length === 0
+                    ? 'http://via.placeholder.com/350x233'
+                    : story.imageUrl
+                }
+                className="story-image"
+                alt="author"
+              />
             </Link>
           </div>
         ))}
