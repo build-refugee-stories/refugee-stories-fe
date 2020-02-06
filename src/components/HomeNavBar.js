@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Link, NavLink } from 'react-router-dom';
-import whiteHamburger from '../assets/white-hamburger-menu.png';
+import { Link, NavLink } from "react-router-dom";
+import whiteHamburger from "../assets/white-hamburger-menu.png";
 
 function HomeNavBar() {
   const [isActive, setIsActive] = useState(false);
@@ -23,9 +23,9 @@ function HomeNavBar() {
   const adminCheck = () => {
     if (localStorage.getItem("token") !== null) {
       isAdmin = true;
-    } 
+    }
     return isAdmin;
-  }
+  };
   adminCheck();
   console.log(isAdmin);
 
@@ -35,34 +35,41 @@ function HomeNavBar() {
         <NavLink to="/" className="home-nav-item">
           Home
         </NavLink>
-        <a className="home-nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
+        {/* <a className="home-nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
           About
-        </a>
+        </a> */}
         <NavLink to="/contribute" className="home-nav-item">
           Contribute
         </NavLink>
-        {(isAdmin) ? (
-        <NavLink to="/dashboard" className="home-nav-item">
-          Dashboard
-        </NavLink> ) : (<NavLink to="/login" className="home-nav-item">
-          Admin Login
-        </NavLink>)}
-        {(isAdmin) ? (
-          <Link to="/" onClick={event => logout(event)} className="home-nav-item">
-          Logout
+        {isAdmin ? (
+          <NavLink to="/dashboard" className="home-nav-item">
+            Dashboard
+          </NavLink>
+        ) : (
+          <NavLink to="/login" className="home-nav-item">
+            Admin
+          </NavLink>
+        )}
+        {isAdmin ? (
+          <Link
+            to="/"
+            onClick={event => logout(event)}
+            className="home-nav-item"
+          >
+            Logout
           </Link>
-        ) : (<NavLink to="/signup" className="home-nav-item">
-        Admin Signup
-      </NavLink> )}
+        ) : (
+          ""
+        )}
       </div>
       <div className="dropdown">
-        <img
+        {/* <img
           onClick={handleMenuClick}
           className="white-hamburger"
           alt="hamburger menu"
           src={whiteHamburger}
-        />
-        <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
+        /> */}
+        <div className={isActive ? "dropdown-content" : "dropdown-off"}>
           <div onClick={handleCloseClick} className="close-button">
             x
           </div>

@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-import Stories from './Stories';
-import Header from './Header';
-import Footer from './Footer';
-import heroImage from '../assets/story-2.jpg';
-import logo from '../assets/white-logo.png';
-import pinkLogo from '../assets/pink-blue-logo.png';
-import hamburger from '../assets/white-hamburger-menu.png';
-import Carousel from './Carousel';
-import HomeNavBar from './HomeNavBar.js';
-import { NavLink, Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import Stories from "./Stories";
+import Header from "./Header";
+import Footer from "./Footer";
+import heroImage from "../assets/story-2.jpg";
+import logo from "../assets/white-logo.png";
+import pinkLogo from "../assets/pink-blue-logo.png";
+import hamburger from "../assets/white-hamburger-menu.png";
+import Carousel from "./Carousel";
+import HomeNavBar from "./HomeNavBar.js";
+import { NavLink, Link } from "react-router-dom";
 
 const Homeview = () => {
   const [storyList, setStoryList] = useState([]);
 
   const getStories = () => {
     axiosWithAuth()
-      .get('https://refugee-stories-api-082019.herokuapp.com/api/public')
+      .get("https://refugee-stories-api-082019.herokuapp.com/api/public")
       .then(res => {
         console.log(res.data);
         // const approvedStories = res.data.filter(story => {
@@ -56,7 +56,7 @@ const Homeview = () => {
       </div>
       <div>
         <div className="main">
-          <Carousel key={storyList.id} stories={storyList} />
+          {/* <Carousel key={storyList.id} stories={storyList} /> */}
 
           <Stories stories={storyList} />
         </div>
@@ -76,9 +76,9 @@ const Homeview = () => {
             <NavLink to="/" className="nav-item nav-bottom-item">
               Home
             </NavLink>
-            <a className="nav-item nav-bottom-item" href="#">
+            {/* <a className="nav-item nav-bottom-item" href="#">
               About
-            </a>
+            </a> */}
             <NavLink to="/contribute" className="nav-item nav-bottom-item">
               Contribute
             </NavLink>

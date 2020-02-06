@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from '../assets/pink-blue-logo.png';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import logo from "../assets/pink-blue-logo.png";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,9 +20,6 @@ function Footer() {
         <NavLink to="/" className="nav-item nav-bottom-item">
           Home
         </NavLink>
-        <a className="nav-item nav-bottom-item" href="#">
-          About
-        </a>
         <NavLink to="/contribute" className="nav-item nav-bottom-item">
           Contribute
         </NavLink>

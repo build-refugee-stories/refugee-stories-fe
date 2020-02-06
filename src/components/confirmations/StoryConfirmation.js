@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import NavBar from '../NavBar.js';
-import logo from '../../assets/white-logo.png';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import NavBar from "../NavBar.js";
+import logo from "../../assets/white-logo.png";
 
 function StoryConfirmation() {
   return (
@@ -26,9 +26,9 @@ function StoryConfirmation() {
       <div>
         <div className="bottomnav">
           <NavLink className="nav-item nav-bottom-item">Home</NavLink>
-          <NavLink className="nav-item nav-bottom-item" href="#">
+          {/* <NavLink className="nav-item nav-bottom-item" href="#">
             About
-          </NavLink>
+          </NavLink> */}
           <NavLink className="nav-item nav-bottom-item">Contribute</NavLink>
           <NavLink className="nav-item nav-bottom-item">Admin</NavLink>
         </div>

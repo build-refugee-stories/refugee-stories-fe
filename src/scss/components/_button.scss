@@ -12,9 +12,15 @@
   margin-right: auto;
   border: none;
   margin-top: 1.5rem;
-
 }
 
+#here {
+  color: $color-primary;
+}
+
+#here:hover {
+  color: $color-primary-lighter;
+}
 .home-submit-button {
   display: none;
 
@@ -39,4 +45,8 @@
 
     z-index: 5;
   }
+}
+
+.home-submit-button:hover {
+  background-color: $color-primary-lighter;
 }
