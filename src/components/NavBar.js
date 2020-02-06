@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
-import whiteHamburger from "../assets/white-hamburger-menu.png";
-import { tsPropertySignature } from "@babel/types";
 
 function NavBar() {
   const [isActive, setIsActive] = useState(false);
 
-  function handleMenuClick() {
-    setIsActive(true);
-  }
+  // function handleMenuClick() {
+  //   setIsActive(true);
+  // }
 
   function handleCloseClick() {
     setIsActive(false);
@@ -28,7 +26,6 @@ function NavBar() {
     return isAdmin;
   };
   adminCheck();
-  console.log(isAdmin);
 
   return (
     <div className="navbarcontainer">

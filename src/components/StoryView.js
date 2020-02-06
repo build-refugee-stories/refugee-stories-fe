@@ -1,16 +1,22 @@
+import React, { useState, useEffect } from "react";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axios from "axios";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
+// import { useLocation } from "react-router-dom";
 
-import React, { useState, useEffect, useContext } from 'react';
-import {axiosWithAuth} from '../utils/axiosWithAuth';
-import axios from 'axios';
-import Header from './Header.js';
-import Footer from './Footer.js';
-
-//contexts
-import AdminContext from '../contexts/AdminContext';
-
-const StoryView = props => {  
-
+const StoryView = props => {
   //const { isAdmin } = useContext(AdminContext);
+
+  // function ScrollToTop() {
+  //   const { pathname } = useLocation();
+
+  //   useEffect(() => {
+  //     window.scrollTo(0, 0);
+  //   }, [pathname]);
+
+  //   return null;
+  // }
 
   const [story, setStory] = useState({});
   const id = props.match.params.id;
@@ -19,7 +25,6 @@ const StoryView = props => {
     axios
       .get(`https://refugee-stories-api-082019.herokuapp.com/api/public/${id}`)
       .then(res => {
-        console.log(res, 'res');
         setStory(res.data);
       })
       .catch(error => console.log(error.response));
@@ -31,8 +36,7 @@ const StoryView = props => {
         `https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`
       )
       .then(res => {
-        console.log('DELETE', res);
-        props.history.push('/');
+        props.history.push("/");
       })
       .catch(error => console.log(error.response));
   };
@@ -40,7 +44,7 @@ const StoryView = props => {
   //Placeholder admin check
   let isAdmin = false;
   const adminCheck = () => {
-    if (localStorage.getItem('token') !== null) {
+    if (localStorage.getItem("token") !== null) {
       isAdmin = true;
     }
     return isAdmin;
@@ -58,51 +62,51 @@ const StoryView = props => {
         <img
           className="story-image"
           width="300px"
-          alt="Photo of author"
+          alt="author"
           src={
-            story.imageUrl === ''
-              ? 'http://via.placeholder.com/350x233'
+            story.imageUrl === ""
+              ? "http://via.placeholder.com/350x233"
               : story.imageUrl
           }
         />
         <p className="p">by {story.author}</p>
 
         <p className="p">
-          {story.title === 'Motherhood in a Ugandan refugee camp' ? (
+          {story.title === "Motherhood in a Ugandan refugee camp" ? (
             <a href="https://medium.com/globalgoodness/12-powerful-refugee-stories-from-around-the-world-5c0a54d2e2ed">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
           {story.title ===
-          'My little daughter died and my children and I were injured' ? (
+          "My little daughter died and my children and I were injured" ? (
             <a href="https://www.islamic-relief.org/six-syrian-refugees-share-their-stories/">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Why are we blacker than everyone else?' ? (
+          {story.title === "Why are we blacker than everyone else?" ? (
             <a href="https://www.dss.gov.au/settlement-services/meet-isaac">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'They would come without warning' ? (
+          {story.title === "They would come without warning" ? (
             <a href="https://www.dss.gov.au/settlement-and-multicultural-affairs/evelyns-story">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Waiting to go home' ? (
+          {story.title === "Waiting to go home" ? (
             <a href="https://www.islamic-relief.org/six-syrian-refugees-share-their-stories/">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
           {story.title ===
           "15 year veteran teacher can't find a teaching job after relocating" ? (
@@ -110,35 +114,35 @@ const StoryView = props => {
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Alia Fled her home in Alepo' ? (
+          {story.title === "Alia Fled her home in Alepo" ? (
             <a href="https://medium.com/globalgoodness/12-powerful-refugee-stories-from-around-the-world-5c0a54d2e2ed">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Two-year-old escapes Burundi genocide' ? (
+          {story.title === "Two-year-old escapes Burundi genocide" ? (
             <a href="https://medium.com/globalgoodness/12-powerful-refugee-stories-from-around-the-world-5c0a54d2e2ed">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Family split up by conflict' ? (
+          {story.title === "Family split up by conflict" ? (
             <a href="https://medium.com/globalgoodness/12-powerful-refugee-stories-from-around-the-world-5c0a54d2e2ed">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
-          {story.title === 'Trying to start a new chapter' ? (
+          {story.title === "Trying to start a new chapter" ? (
             <a href="https://medium.com/globalgoodness/12-powerful-refugee-stories-from-around-the-world-5c0a54d2e2ed">
               source
             </a>
           ) : (
-            ''
+            ""
           )}
         </p>
         <p className="p story-text">{story.story}</p>
@@ -148,7 +152,7 @@ const StoryView = props => {
             Remove Story
           </button>
         ) : (
-          <button onClick={() => props.history.push('/')}>
+          <button onClick={() => props.history.push("/")}>
             Back To All Stories
           </button>
         )}

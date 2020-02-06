@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
-import whiteHamburger from "../assets/white-hamburger-menu.png";
 
 function HomeNavBar() {
   const [isActive, setIsActive] = useState(false);
 
-  function handleMenuClick() {
-    setIsActive(true);
-  }
+  // function handleMenuClick() {
+  //   setIsActive(true);
+  // }
 
   function handleCloseClick() {
     setIsActive(false);
@@ -27,7 +26,6 @@ function HomeNavBar() {
     return isAdmin;
   };
   adminCheck();
-  console.log(isAdmin);
 
   return (
     <div className="navbarcontainer">
@@ -76,9 +74,7 @@ function HomeNavBar() {
           <NavLink to="/" className="home-dropdown-link">
             Home
           </NavLink>
-          <a className="home-dropdown-link" href="#">
-            About
-          </a>
+
           <NavLink to="/contribute" className="home-dropdown-link">
             Contribute
           </NavLink>

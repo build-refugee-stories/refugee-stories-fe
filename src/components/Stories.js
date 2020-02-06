@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Stories = ({ stories }) => {
   //console.log(stories);
@@ -17,7 +17,7 @@ const Stories = ({ stories }) => {
               <img
                 src={
                   story.imageUrl.length === 0
-                    ? 'http://via.placeholder.com/350x233'
+                    ? "http://via.placeholder.com/350x233"
                     : story.imageUrl
                 }
                 className="story-image"

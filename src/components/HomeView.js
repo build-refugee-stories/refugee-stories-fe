@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Stories from "./Stories";
-import Header from "./Header";
-import Footer from "./Footer";
 import heroImage from "../assets/story-2.jpg";
 import logo from "../assets/white-logo.png";
 import pinkLogo from "../assets/pink-blue-logo.png";
-import hamburger from "../assets/white-hamburger-menu.png";
-import Carousel from "./Carousel";
 import HomeNavBar from "./HomeNavBar.js";
 import { NavLink, Link } from "react-router-dom";
 
@@ -18,7 +14,6 @@ const Homeview = () => {
     axiosWithAuth()
       .get("https://refugee-stories-api-082019.herokuapp.com/api/public")
       .then(res => {
-        console.log(res.data);
         // const approvedStories = res.data.filter(story => {
         //     if (story.approved === true) return story;
         setStoryList(res.data);

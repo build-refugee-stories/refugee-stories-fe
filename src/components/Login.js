@@ -71,14 +71,12 @@ const FormikLoginForm = withFormik({
   }),
 
   handleSubmit(values, { props, resetForm }) {
-    console.log(props);
     axios
       .post(
         "https://refugee-stories-api-082019.herokuapp.com/api/login",
         values
       )
       .then(res => {
-        console.log(res.data);
         props.updateAdmin(true);
         localStorage.setItem("token", res.data.token);
         props.history.push("/dashboard");

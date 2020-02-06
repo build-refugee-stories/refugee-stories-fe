@@ -1,9 +1,9 @@
-import React from 'react';
-import axios from 'axios';
-import { Form, Field, withFormik } from 'formik';
-import * as Yup from 'yup';
-import Header from './Header.js';
-import Footer from './Footer.js';
+import React from "react";
+import axios from "axios";
+import { Form, Field, withFormik } from "formik";
+import * as Yup from "yup";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
 
 const StoryForm = () => {
   return (
@@ -40,18 +40,18 @@ const StoryForm = () => {
           placeholder="Title"
         />
         <label>Year</label>
-        <Field 
-            className="form-field"
-            name="year"
-            type="number"
-            placeholder="Year"
-        />  
-        <label>Image</label> 
-        <Field 
-            className="form-field"
-            name="imageUrl"
-            type="text"
-            placeholder="Image Url"
+        <Field
+          className="form-field"
+          name="year"
+          type="number"
+          placeholder="Year"
+        />
+        <label>Image</label>
+        <Field
+          className="form-field"
+          name="imageUrl"
+          type="text"
+          placeholder="Image Url"
         />
         <label>Your Story</label>
         <Field
@@ -70,12 +70,12 @@ const StoryForm = () => {
 const FormikStoryForm = withFormik({
   mapPropsToValues({ author, country, title, story, year, imageUrl }) {
     return {
-      author: author || '',
-      country: country || '',
-      title: title || '',
-      story: story || '',
-      year: year || '',
-      imageUrl: imageUrl || '',
+      author: author || "",
+      country: country || "",
+      title: title || "",
+      story: story || "",
+      year: year || "",
+      imageUrl: imageUrl || ""
     };
   },
   validationSchema: Yup.object().shape({
@@ -84,20 +84,18 @@ const FormikStoryForm = withFormik({
     title: Yup.string().required(),
     story: Yup.string().required(),
     year: Yup.number(),
-    imageUrl: Yup.string(),
+    imageUrl: Yup.string()
   }),
 
   handleSubmit(values, { props, setStatus, resetForm }) {
-    console.log(values);
     axios
       .post(
-        'https://refugee-stories-api-082019.herokuapp.com/api/public',
+        "https://refugee-stories-api-082019.herokuapp.com/api/public",
         values
       )
       .then(res => {
-        console.log(res.data);
         setStatus(res.data);
-        props.history.push("/story-confirmation")
+        props.history.push("/story-confirmation");
         resetForm();
       })
       .catch(error => console.log(error.response));
