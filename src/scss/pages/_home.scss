@@ -1,3 +1,27 @@
+.hero-container {
+  position: relative;
+  width: 100vw;
+
+  text-align: center;
+  color: white;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-container {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.navbarcontainer {
+  position: absolute;
+  z-index: 1;
+}
 .hero-image {
   width: 100%;
 }
@@ -24,6 +48,95 @@
 
   text-align: center;
 }
+
+.hero-title {
+  font-family: Montserrat;
+
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  text-align: center;
+
+  @media only screen and (min-width: 730px) {
+    font-size: 5.2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 1;
+  height: 2.2rem;
+  width: 25rem;
+  margin: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: -1rem;
+  left: -1rem;
+  margin-right: 2rem;
+  border-radius: 1rem;
+  height: 5rem;
+  width: 100%;
+
+  @media only screen and (min-width: 730px) {
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    height: 16rem;
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 850px) {
+    background: none;
+
+    background: rgba(0, 0, 0, 0.5);
+    height: 20rem;
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 950px) {
+    background: none;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 1050px) {
+    background: none;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 2rem;
+  }
+}
+.main {
+  margin-top: -20rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: 500px) {
+    margin-top: -15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media only screen and (min-width: 595px) {
+    margin-top: -10rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (min-width: 670px) {
+    margin-top: -3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (min-width: 800px) {
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .loader {
   position: absolute;
   left: 50%;
@@ -42,12 +155,19 @@
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-

@@ -3,7 +3,6 @@ import React from 'react';
 
 import { Route } from 'react-router-dom';
 
-
 //components
 import LoginForm from './components/Login';
 import PrivateRoute from './components/admin-components/PrivateRoute';
@@ -19,40 +18,50 @@ import StoryView from './components/StoryView.js';
 import AdminStoryView from './components/admin-components/AdminStoryView.js';
 
 //contexts
-import StoriesContext from './contexts/StoriesContext';
+import AdminContext from './contexts/AdminContext';
+
+import { gray } from 'ansi-colors';
 
 
 function App() {
+
+  const [isAdmin, updateIsAdmin] = useState(false);
+  console.log(isAdmin);
+  
+  // useEffect(() => {
+  //   updateIsAdmin()
+  // })
+
+
   return (
-    <div className="App">
+    <AdminContext.Provider value={{ isAdmin, updateIsAdmin }}>
+      <div className="App">
+        <Route exact path="/" component={HomeView} />
+        <Route
+          path="/contribute"
+          render={props => <StoryForm {...props} />}
+        />
+        <Route path="/story-confirmation" component={StoryConfirmation} />
+        <Route
+          path="/signup"
+          render={props => <SignupForm {...props} />}
+        />
+        <Route path="/signup-confirmation" component={AdminConfirmation} />
+        <Route
+          path="/login"
+          render={props => <LoginForm {...props} updateAdmin={updateIsAdmin} />}
+        />
 
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <Route
+          exact path="/dashboard/story/:id"
+          component={AdminStoryView}
+        />
+        <Route path="/story/:id" component={StoryView} />
 
-      <Route exact path="/" component={HomeView} />
+      </div>
+    </AdminContext.Provider>
 
-      <Route
-        path="/contribute"
-        render={props => <StoryForm {...props} />}
-      />
-      <Route path="/story-confirmation" component={StoryConfirmation} />
-
-      <Route
-        path="/signup"
-        render={props => <SignupForm {...props} />}
-      />
-      <Route path="/signup-confirmation" component={AdminConfirmation} />
-      <Route
-        path="/login"
-        render={props => <LoginForm {...props} />}
-      />
-
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
-      <Route
-        exact path="/dashboard/story/:id"
-        component={AdminStoryView}
-      />
-      <Route path="/story/:id" component={StoryView} />
-
-    </div>
   );
 }
 

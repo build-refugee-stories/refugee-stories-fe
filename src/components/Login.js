@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { withFormik, Form, Field } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import Header from './Header.js';
 import Footer from './Footer.js';
+
+
 
 const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
   //make a post request to retrieve the token from BE
@@ -17,7 +20,11 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
         <Header />
         <div className="form-text">
           <h1 className="h1">Admin Login</h1>
-          <p className="p">Not an admin? Apply to be an admin here.</p>
+          <p className="p">Not an admin? Apply to be an admin 
+          <Link to={"/signup"}>
+                <span> here.</span>
+          </Link>
+          </p>
         </div>
         <Form className="signup-form main-form">
           <label>Email</label>
@@ -52,6 +59,7 @@ const Login = ({ history, errors, touched, values, handleSubmit, status }) => {
 };
 
 const FormikLoginForm = withFormik({
+
   mapPropsToValues({ email, password }) {
     return {
       email: email || '',
@@ -65,7 +73,7 @@ const FormikLoginForm = withFormik({
   }),
 
   handleSubmit(values, { props, resetForm }) {
-    //console.log(values);
+    console.log(props);
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/login',
@@ -73,6 +81,7 @@ const FormikLoginForm = withFormik({
       )
       .then(res => {
         console.log(res.data);
+        props.updateAdmin(true);
         localStorage.setItem('token', res.data.token);
         props.history.push("/dashboard");
         resetForm();

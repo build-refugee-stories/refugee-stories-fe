@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 
 import { Link, NavLink } from 'react-router-dom';
 import whiteHamburger from '../assets/white-hamburger-menu.png';
-import { tsPropertySignature } from '@babel/types';
 
-function NavBar() {
-  
+function HomeNavBar() {
   const [isActive, setIsActive] = useState(false);
 
-  // function handleMenuClick() {
-  //   setIsActive(true);
-  // }
+  function handleMenuClick() {
+    setIsActive(true);
+  }
 
-  // function handleCloseClick() {
-  //   setIsActive(false);
-  // }
+  function handleCloseClick() {
+    setIsActive(false);
+  }
 
   function logout(event) {
     localStorage.removeItem("token");
@@ -30,18 +28,17 @@ function NavBar() {
   }
   adminCheck();
   console.log(isAdmin);
-  
 
   return (
     <div className="navbarcontainer">
-      <div className="topnav">
-        <NavLink to="/" className="nav-item">
+      <div className="home-topnav">
+        <NavLink to="/" className="home-nav-item">
           Home
         </NavLink>
-        <a className="nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
+        <a className="home-nav-item" href="https://build-refugee-stories.github.io/david_ui/about-us.html">
           About
         </a>
-        <NavLink to="/contribute" className="nav-item">
+        <NavLink to="/contribute" className="home-nav-item">
           Contribute
         </NavLink>
         {(isAdmin) ? (
@@ -58,54 +55,33 @@ function NavBar() {
         Admin Signup
       </NavLink> )}
       </div>
-     
       <div className="dropdown">
-      <div onMouseOver={() => setIsActive(!isActive)} class="dropdown-content">
-      <div className={isActive ? 'dropdown-content' : 'dropdown-off'}></div>
-      <div className={isActive ? 'a' : 'b'}>
-    
-          <NavLink to="/" className="dropdown-link">
-            Home
-          </NavLink>
-          <a className="dropdown-link" href="#">
-            About
-          </a>
-          <NavLink to="/contribute" className="dropdown-link">
-            Contribute
-          </NavLink>
-          <NavLink to="/login" className="dropdown-link">
-            Admin
-          </NavLink>
-      </div>
-    </div>
-        {/* <img
+        <img
           onClick={handleMenuClick}
           className="white-hamburger"
           alt="hamburger menu"
           src={whiteHamburger}
-        /> */}
-        {/* <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
+        />
+        <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
           <div onClick={handleCloseClick} className="close-button">
             x
           </div>
-          <NavLink to="/" className="dropdown-link">
+          <NavLink to="/" className="home-dropdown-link">
             Home
           </NavLink>
-          <a className="dropdown-link" href="#">
+          <a className="home-dropdown-link" href="#">
             About
           </a>
-          <NavLink to="/contribute" className="dropdown-link">
+          <NavLink to="/contribute" className="home-dropdown-link">
             Contribute
           </NavLink>
-          <NavLink to="/login" className="dropdown-link">
+          <NavLink to="/login" className="home-dropdown-link">
             Admin
           </NavLink>
-        </div> */}
+        </div>
       </div>
-      
-      
     </div>
   );
 }
 
-export default NavBar;
+export default HomeNavBar;

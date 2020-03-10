@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 
   // margin-left: 3rem;
   // margin-right: 3rem;
@@ -15,16 +17,17 @@
   margin: 0 auto;
   position: relative;
 }
-
+   
 .carousel-image {
   width: 40rem;
 }
-
+   
 .main-home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 // .slick-slider {
