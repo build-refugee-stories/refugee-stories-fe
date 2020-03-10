@@ -145,25 +145,40 @@
     .home-white-hamburger {
       display: none; } }
 
-.close-button {
-  text-align: right;
-  padding: 0 1rem 0 0; }
-
 .dropdown-content {
-  position: absolute;
-  top: -2rem;
-  left: -1rem;
-  margin: 3rem;
-  display: flex;
-  flex-direction: column;
-  background-color: #97aabd;
-  color: white;
-  border-radius: 0 1rem 1rem 0;
-  font-size: 2.2rem;
-  padding: 1rem; }
+  margin: 1em;
+  width: 40px; }
 
-.dropdown-item {
-  padding: 0.5rem; }
+.a {
+  display: visible; }
+
+.b {
+  display: none;
+  overflow: hidden; }
+
+.dropdown-content:after,
+.dropdown-content:before,
+.dropdown-content div {
+  background-color: #fff;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all .2s ease-in-out; }
+
+.dropdown-content:hover:before {
+  transform: translateY(12px) rotate(135deg); }
+
+.dropdown-content:hover:after {
+  transform: translateY(-12px) rotate(-135deg); }
+
+.dropdown-content:hover div {
+  transform: scale(0); }
+
+.dropdown-content a {
+  display: flex;
+  flex-direction: column; }
 
 .header {
   position: relative;

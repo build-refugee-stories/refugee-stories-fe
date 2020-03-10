@@ -8,13 +8,13 @@ function NavBar() {
   
   const [isActive, setIsActive] = useState(false);
 
-  function handleMenuClick() {
-    setIsActive(true);
-  }
+  // function handleMenuClick() {
+  //   setIsActive(true);
+  // }
 
-  function handleCloseClick() {
-    setIsActive(false);
-  }
+  // function handleCloseClick() {
+  //   setIsActive(false);
+  // }
 
 
   // function logout(event) {
@@ -39,14 +39,33 @@ function NavBar() {
           Admin
         </NavLink>
       </div>
+     
       <div className="dropdown">
-        <img
+      <div onMouseOver={() => setIsActive(!isActive)} class="dropdown-content">
+      <div className={isActive ? 'dropdown-content' : 'dropdown-off'}></div>
+      <div className={isActive ? 'a' : 'b'}>
+    
+          <NavLink to="/" className="dropdown-link">
+            Home
+          </NavLink>
+          <a className="dropdown-link" href="#">
+            About
+          </a>
+          <NavLink to="/contribute" className="dropdown-link">
+            Contribute
+          </NavLink>
+          <NavLink to="/login" className="dropdown-link">
+            Admin
+          </NavLink>
+      </div>
+    </div>
+        {/* <img
           onClick={handleMenuClick}
           className="white-hamburger"
           alt="hamburger menu"
           src={whiteHamburger}
-        />
-        <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
+        /> */}
+        {/* <div className={isActive ? 'dropdown-content' : 'dropdown-off'}>
           <div onClick={handleCloseClick} className="close-button">
             x
           </div>
@@ -62,8 +81,10 @@ function NavBar() {
           <NavLink to="/login" className="dropdown-link">
             Admin
           </NavLink>
-        </div>
+        </div> */}
       </div>
+      
+      
     </div>
   );
 }
